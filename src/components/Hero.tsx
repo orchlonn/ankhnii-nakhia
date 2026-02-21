@@ -1,9 +1,24 @@
-import {
-  ShieldCheck,
-  Globe,
-  TrendingUp,
-  ChevronRight,
-} from "lucide-react";
+"use client";
+
+import { ShieldCheck, ChevronRight } from "lucide-react";
+import dynamic from "next/dynamic";
+
+const PharmacyScene = dynamic(
+  () => import("@/components/three/PharmacyScene"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center w-full h-full min-h-[500px]">
+        <div className="glass rounded-2xl p-8 animate-pulse-gentle">
+          <div className="w-16 h-16 rounded-xl bg-teal-400/20 mx-auto" />
+          <p className="text-teal-200/60 text-sm mt-4 text-center">
+            3D ачааллаж байна...
+          </p>
+        </div>
+      </div>
+    ),
+  }
+);
 
 export default function Hero() {
   return (
@@ -60,68 +75,28 @@ export default function Hero() {
             <div className="grid grid-cols-3 gap-4 mt-10 lg:hidden">
               <div className="glass rounded-xl p-3 text-center">
                 <div className="text-xl font-bold text-white">20+</div>
-                <div className="text-[11px] text-teal-200/70">Жилийн туршлага</div>
+                <div className="text-[11px] text-teal-200/70">
+                  Жилийн туршлага
+                </div>
               </div>
               <div className="glass rounded-xl p-3 text-center">
                 <div className="text-xl font-bold text-white">500+</div>
-                <div className="text-[11px] text-teal-200/70">Бүтээгдэхүүн</div>
+                <div className="text-[11px] text-teal-200/70">
+                  Бүтээгдэхүүн
+                </div>
               </div>
               <div className="glass rounded-xl p-3 text-center">
                 <div className="text-xl font-bold text-white">15+</div>
-                <div className="text-[11px] text-teal-200/70">Импортын улс</div>
+                <div className="text-[11px] text-teal-200/70">
+                  Импортын улс
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right side - Feature cards */}
-          <div className="hidden lg:grid grid-cols-2 gap-5">
-            <div className="glass rounded-2xl p-6 animate-fade-in-up animation-delay-200 hover:bg-white/15 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-teal-400/20 flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-teal-300" />
-              </div>
-              <h3 className="text-white font-semibold text-lg mb-2">
-                Олон улсын импорт
-              </h3>
-              <p className="text-teal-200/70 text-sm leading-relaxed">
-                Дэлхийн тэргүүлэгч үйлдвэрлэгчдээс шууд импортолно
-              </p>
-            </div>
-
-            <div className="glass rounded-2xl p-6 mt-8 animate-fade-in-up animation-delay-400 hover:bg-white/15 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-emerald-400/20 flex items-center justify-center mb-4">
-                <ShieldCheck className="w-6 h-6 text-emerald-300" />
-              </div>
-              <h3 className="text-white font-semibold text-lg mb-2">
-                Чанарын баталгаа
-              </h3>
-              <p className="text-teal-200/70 text-sm leading-relaxed">
-                GMP стандартад нийцсэн бүтээгдэхүүн
-              </p>
-            </div>
-
-            <div className="glass rounded-2xl p-6 animate-fade-in-up animation-delay-600 hover:bg-white/15 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-cyan-400/20 flex items-center justify-center mb-4">
-                <TrendingUp className="w-6 h-6 text-cyan-300" />
-              </div>
-              <h3 className="text-white font-semibold text-lg mb-2">
-                20+ жилийн туршлага
-              </h3>
-              <p className="text-teal-200/70 text-sm leading-relaxed">
-                2005 оноос хойш салбартаа тэргүүлж байна
-              </p>
-            </div>
-
-            <div className="glass rounded-2xl p-6 mt-8 animate-fade-in-up animation-delay-800 hover:bg-white/15 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-blue-400/20 flex items-center justify-center mb-4">
-                <Pill className="w-6 h-6 text-blue-300" />
-              </div>
-              <h3 className="text-white font-semibold text-lg mb-2">
-                500+ бүтээгдэхүүн
-              </h3>
-              <p className="text-teal-200/70 text-sm leading-relaxed">
-                Өргөн хүрээний эм, эмнэлгийн хэрэгсэл
-              </p>
-            </div>
+          {/* Right side - 3D Pharmacy Scene (desktop only) */}
+          <div className="hidden lg:block relative w-full h-[500px]">
+            <PharmacyScene />
           </div>
         </div>
       </div>
@@ -141,23 +116,5 @@ export default function Hero() {
         </svg>
       </div>
     </section>
-  );
-}
-
-function Pill({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="m10.5 1.5 3 3m-6.5 3.5 8-8a4.24 4.24 0 0 1 6 6l-8 8a4.24 4.24 0 0 1-6-6Z" />
-      <path d="m8.5 8.5 3 3" />
-    </svg>
   );
 }

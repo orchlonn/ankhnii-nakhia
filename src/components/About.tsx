@@ -30,26 +30,25 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left - Image / Visual */}
           <div className="relative mb-4 lg:mb-0">
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-              <div className="gradient-primary flex flex-col items-center justify-center px-6 sm:px-8 pt-10 pb-20 sm:pt-14 sm:pb-24">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+              <div className="gradient-primary flex flex-col items-center justify-center px-6 sm:px-8 pt-10 sm:pt-14 pb-10 sm:pb-14">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/20 flex items-center justify-center mb-4 sm:mb-6">
                   <HeartPulse className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-3 text-center">
                   2005 оноос
                 </h3>
-                <p className="text-teal-100/80 text-base sm:text-lg text-center">
+                <p className="text-teal-100/80 text-base sm:text-lg text-center mb-6 sm:mb-8">
                   Монголын эрүүл мэндийн салбарт итгэлтэй үйлчилж байна
                 </p>
-              </div>
-
-              {/* Badge pinned at bottom center inside the card */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:bottom-4 sm:left-auto sm:right-4 sm:translate-x-0 bg-white rounded-xl sm:rounded-2xl shadow-xl px-5 py-2.5 sm:p-5">
-                <div className="flex sm:block items-center gap-2 sm:text-center">
-                  <span className="text-2xl sm:text-3xl font-bold text-teal-600">20+</span>
-                  <p className="text-xs sm:text-sm text-gray-500 font-medium leading-tight">
-                    Жилийн туршлага
-                  </p>
+                {/* Badge below text, inside the card */}
+                <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl px-6 py-3 sm:px-8 sm:py-4">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <span className="text-2xl sm:text-3xl font-bold text-teal-600">20+</span>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-tight">
+                      Жилийн<br />туршлага
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -62,43 +62,43 @@ const categories = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-24 md:py-32 bg-white">
+    <section id="products" className="py-16 sm:py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4 sm:mb-6">
             Бүтээгдэхүүн
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             Бүтээгдэхүүний{" "}
             <span className="text-teal-600">ангилал</span>
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
             Бид өргөн хүрээний эм, эмнэлгийн хэрэгслийг дэлхийн тэргүүлэгч
             үйлдвэрлэгчдээс нийлүүлж байна.
           </p>
         </div>
 
         {/* Product Categories Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
           {categories.map((cat) => (
             <div
               key={cat.title}
-              className="group relative bg-white rounded-2xl border border-gray-100 p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative bg-white rounded-xl sm:rounded-2xl border border-gray-100 p-4 sm:p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               {/* Hover gradient bg */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`}
+                className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl sm:rounded-2xl`}
               />
 
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gray-50 group-hover:bg-white/20 flex items-center justify-center mx-auto mb-4 transition-colors">
-                  <cat.icon className="w-8 h-8 text-gray-700 group-hover:text-white transition-colors" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gray-50 group-hover:bg-white/20 flex items-center justify-center mx-auto mb-3 sm:mb-4 transition-colors">
+                  <cat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-700 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="font-semibold text-gray-900 group-hover:text-white mb-1 transition-colors">
+                <h3 className="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-white mb-0.5 sm:mb-1 transition-colors">
                   {cat.title}
                 </h3>
-                <span className="text-sm text-gray-400 group-hover:text-white/80 font-medium transition-colors">
+                <span className="text-xs sm:text-sm text-gray-400 group-hover:text-white/80 font-medium transition-colors">
                   {cat.count} бүтээгдэхүүн
                 </span>
               </div>
@@ -107,11 +107,11 @@ export default function Products() {
         </div>
 
         {/* Partners */}
-        <div className="mt-20 text-center">
-          <p className="text-sm text-gray-400 font-medium uppercase tracking-wider mb-8">
+        <div className="mt-12 sm:mt-20 text-center">
+          <p className="text-xs sm:text-sm text-gray-400 font-medium uppercase tracking-wider mb-6 sm:mb-8">
             Хамтрагч олон улсын компаниуд
           </p>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 items-center opacity-50">
+          <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-12 gap-y-4 sm:gap-y-6 items-center opacity-50">
             {[
               "Pfizer",
               "Roche",
@@ -122,7 +122,7 @@ export default function Products() {
             ].map((name) => (
               <span
                 key={name}
-                className="text-xl md:text-2xl font-bold text-gray-300 tracking-tight"
+                className="text-base sm:text-xl md:text-2xl font-bold text-gray-300 tracking-tight"
               >
                 {name}
               </span>

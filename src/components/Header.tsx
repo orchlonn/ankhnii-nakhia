@@ -17,17 +17,17 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl gradient-primary flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-              <Pill className="w-6 h-6 text-white" />
+          <a href="#hero" className="flex items-center gap-2 sm:gap-3 group">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl gradient-primary flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+              <Pill className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <span className="text-xl font-bold text-secondary-dark tracking-tight">
+              <span className="text-base sm:text-xl font-bold text-secondary-dark tracking-tight">
                 Анхны Нахиа
               </span>
-              <span className="block text-[11px] text-teal-600 font-medium -mt-1 tracking-wide">
+              <span className="block text-[10px] sm:text-[11px] text-teal-600 font-medium -mt-1 tracking-wide">
                 PHARMA LLC
               </span>
             </div>

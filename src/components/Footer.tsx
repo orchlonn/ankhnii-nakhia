@@ -1,11 +1,11 @@
 import { Pill, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 
 const quickLinks = [
-  { label: "Нүүр", href: "#hero" },
-  { label: "Бидний тухай", href: "#about" },
-  { label: "Үйлчилгээ", href: "#services" },
-  { label: "Бүтээгдэхүүн", href: "#products" },
-  { label: "Холбоо барих", href: "#contact" },
+  { label: "Нүүр", href: "/" },
+  { label: "Бидний тухай", href: "/about" },
+  { label: "Үйлчилгээ", href: "/services" },
+  { label: "Бүтээгдэхүүн", href: "/products" },
+  { label: "Холбоо барих", href: "/contact" },
 ];
 
 const serviceLinks = [
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1">
-            <a href="#hero" className="flex items-center gap-3 mb-5">
+            <a href="/" className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
                 <Pill className="w-5 h-5 text-white" />
               </div>

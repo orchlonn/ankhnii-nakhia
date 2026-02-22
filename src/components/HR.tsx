@@ -128,7 +128,7 @@ export default function HR() {
       </div>
 
       {/* HR Policy Pillars */}
-      <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-8 sm:py-14">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
           <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">

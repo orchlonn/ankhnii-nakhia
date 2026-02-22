@@ -11,6 +11,7 @@ import {
   Award,
   ArrowRight,
 } from "lucide-react";
+import SpotlightBanner from "./SpotlightBanner";
 
 const values = [
   {
@@ -298,27 +299,24 @@ export default function About() {
       {/* CTA */}
       <div className="bg-white">
         <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-12 sm:py-16">
-          <div className="bg-[#243342] rounded-2xl p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute w-[300px] h-[300px] bg-[#00AC94]/15 rounded-full -top-32 -right-20 blur-[80px]" />
-            </div>
+          <SpotlightBanner>
             <div className="relative">
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
                 Бидэнтэй хамтран ажиллах
               </h3>
-              <p className="text-sm text-gray-400 max-w-md">
+              <p className="text-sm text-white/70 max-w-md">
                 Эм, эмнэлгийн хэрэгслийн захиалга өгөх эсвэл хамтын ажиллагааны
                 талаар мэдээлэл авахыг хүсвэл бидэнтэй холбогдоорой.
               </p>
             </div>
             <a
               href="/contact"
-              className="relative inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#243342] bg-white hover:bg-gray-100 rounded-xl transition-all shrink-0"
+              className="relative inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#00AC94] bg-white hover:bg-gray-50 rounded-xl transition-all shrink-0"
             >
               Холбоо барих
               <ArrowRight className="w-4 h-4" />
             </a>
-          </div>
+          </SpotlightBanner>
         </div>
       </div>
     </section>

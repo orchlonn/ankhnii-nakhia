@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #0d9488;
-  --primary-dark: #0f766e;
-  --primary-light: #ccfbf1;
-  --secondary: #1e3a5f;
-  --secondary-dark: #0f2640;
-  --accent: #10b981;
+  --background: #fbf9fa;
+  --foreground: #243342;
+  --primary: #00AC94;
+  --primary-dark: #009882;
+  --primary-light: #AAE3DB;
+  --secondary: #243342;
+  --secondary-dark: #1a2530;
+  --text-body: #455A6F;
+  --card-bg: #ffffff;
+  --section-bg: #F9FAFB;
 }
 
 @theme inline {
@@ -19,7 +21,7 @@
   --color-primary-light: var(--primary-light);
   --color-secondary: var(--secondary);
   --color-secondary-dark: var(--secondary-dark);
-  --color-accent: var(--accent);
+  --color-text-body: var(--text-body);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -73,11 +75,6 @@ html {
   }
 }
 
-@keyframes pulse-gentle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
@@ -92,10 +89,6 @@ html {
 
 .animate-slide-in-right {
   animation: slide-in-right 0.8s ease-out forwards;
-}
-
-.animate-pulse-gentle {
-  animation: pulse-gentle 3s ease-in-out infinite;
 }
 
 .animation-delay-200 {
@@ -113,27 +106,20 @@ html {
   opacity: 0;
 }
 
-.animation-delay-800 {
-  animation-delay: 0.8s;
-  opacity: 0;
+/* Card hover shadow with teal tint */
+.card-hover {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Gradient backgrounds */
-.gradient-primary {
-  background: linear-gradient(135deg, #0d9488 0%, #1e3a5f 100%);
+.card-hover:hover {
+  box-shadow: 0px 12px 48px rgba(0, 172, 148, 0.2);
+  transform: translateY(-2px);
 }
 
-.gradient-hero {
-  background: linear-gradient(135deg, #0f2640 0%, #0d9488 50%, #10b981 100%);
-}
-
-.gradient-section {
-  background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
-}
-
-/* Glass effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+/* Decorative blur circles */
+.blur-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
 }

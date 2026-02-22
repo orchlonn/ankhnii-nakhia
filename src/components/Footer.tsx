@@ -1,4 +1,4 @@
-import { Pill, Phone, Mail, MapPin } from "lucide-react";
+import { Pill, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 
 const quickLinks = [
   { label: "Нүүр", href: "#hero" },
@@ -105,22 +105,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
-          <p className="text-xs sm:text-sm text-gray-500 text-center sm:text-left">
+        <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs sm:text-sm text-gray-500">
             &copy; 2005–2026 Анхны Нахиа ХХК. Бүх эрх хуулиар хамгаалагдсан.
           </p>
-          <div className="flex items-center gap-4 sm:gap-6">
-            <a
-              href="#"
-              className="text-sm text-gray-500 hover:text-gray-300 transition-colors"
-            >
-              Нууцлалын бодлого
+          <div className="flex items-center gap-4">
+            <a href="#" className="text-gray-500 hover:text-teal-400 transition-colors" aria-label="Facebook">
+              <Facebook className="w-5 h-5" />
             </a>
-            <a
-              href="#"
-              className="text-sm text-gray-500 hover:text-gray-300 transition-colors"
-            >
-              Үйлчилгээний нөхцөл
+            <a href="#" className="text-gray-500 hover:text-teal-400 transition-colors" aria-label="Instagram">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="#" className="text-gray-500 hover:text-teal-400 transition-colors" aria-label="LinkedIn">
+              <Linkedin className="w-5 h-5" />
             </a>
           </div>
         </div>

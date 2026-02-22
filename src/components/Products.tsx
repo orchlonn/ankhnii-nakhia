@@ -1,133 +1,48 @@
-import {
-  Pill,
-  Syringe,
-  Eye,
-  Baby,
-  Heart,
-  Brain,
-  Bone,
-  Activity,
-} from "lucide-react";
-
-const categories = [
-  {
-    icon: Pill,
-    title: "Ерөнхий эм",
-    count: "120+",
-    gradient: "from-teal-500 to-teal-600",
-  },
-  {
-    icon: Heart,
-    title: "Зүрх судасны эм",
-    count: "45+",
-    gradient: "from-rose-500 to-rose-600",
-  },
-  {
-    icon: Brain,
-    title: "Мэдрэлийн эм",
-    count: "35+",
-    gradient: "from-purple-500 to-purple-600",
-  },
-  {
-    icon: Eye,
-    title: "Нүдний эм",
-    count: "25+",
-    gradient: "from-blue-500 to-blue-600",
-  },
-  {
-    icon: Baby,
-    title: "Хүүхдийн эм",
-    count: "60+",
-    gradient: "from-amber-500 to-amber-600",
-  },
-  {
-    icon: Syringe,
-    title: "Тарианы бэлдмэл",
-    count: "40+",
-    gradient: "from-cyan-500 to-cyan-600",
-  },
-  {
-    icon: Bone,
-    title: "Яс, үе мөчний эм",
-    count: "30+",
-    gradient: "from-emerald-500 to-emerald-600",
-  },
-  {
-    icon: Activity,
-    title: "Эмнэлгийн хэрэгсэл",
-    count: "80+",
-    gradient: "from-indigo-500 to-indigo-600",
-  },
+const partners = [
+  "Pfizer",
+  "Roche",
+  "Novartis",
+  "Sanofi",
+  "AstraZeneca",
+  "Bayer",
+  "GSK",
+  "Merck",
+  "Johnson & Johnson",
+  "Abbott",
+  "Takeda",
+  "Boehringer",
+  "Teva",
+  "Servier",
+  "Gedeon Richter",
+  "KRKA",
 ];
 
 export default function Products() {
   return (
-    <section id="products" className="py-16 sm:py-24 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="products" className="py-12 sm:py-20 bg-[#fbf9fa]">
+      <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 text-teal-700 text-sm font-medium mb-4 sm:mb-6">
-            Бүтээгдэхүүн
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Бүтээгдэхүүний{" "}
-            <span className="text-teal-600">ангилал</span>
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
+            Бизнес хамтрагчид
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg leading-relaxed px-2 sm:px-0">
-            Бид өргөн хүрээний эм, эмнэлгийн хэрэгслийг дэлхийн тэргүүлэгч
-            үйлдвэрлэгчдээс нийлүүлж байна.
+          <p className="text-sm sm:text-base text-[#455A6F] max-w-xl mx-auto">
+            15+ улс орны тэргүүлэгч эмийн компаниудтай хамтран ажилладаг
           </p>
         </div>
 
-        {/* Product Categories Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
-          {categories.map((cat) => (
+        {/* Partner Logos Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-5">
+          {partners.map((name) => (
             <div
-              key={cat.title}
-              className="group relative bg-white rounded-xl sm:rounded-2xl border border-gray-100 p-4 sm:p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              key={name}
+              className="flex items-center justify-center h-16 sm:h-20 bg-white rounded-xl border border-gray-100 hover:border-[#00AC94]/30 hover:shadow-sm transition-all"
             >
-              {/* Hover gradient bg */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl sm:rounded-2xl`}
-              />
-
-              <div className="relative z-10">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gray-50 group-hover:bg-white/20 flex items-center justify-center mx-auto mb-3 sm:mb-4 transition-colors">
-                  <cat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-700 group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-white mb-0.5 sm:mb-1 transition-colors">
-                  {cat.title}
-                </h3>
-                <span className="text-xs sm:text-sm text-gray-400 group-hover:text-white/80 font-medium transition-colors">
-                  {cat.count} бүтээгдэхүүн
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Partners */}
-        <div className="mt-12 sm:mt-20 text-center">
-          <p className="text-xs sm:text-sm text-gray-400 font-medium uppercase tracking-wider mb-6 sm:mb-8">
-            Хамтрагч олон улсын компаниуд
-          </p>
-          <div className="flex flex-wrap justify-center gap-x-6 sm:gap-x-12 gap-y-4 sm:gap-y-6 items-center opacity-50">
-            {[
-              "Pfizer",
-              "Roche",
-              "Novartis",
-              "Sanofi",
-              "AstraZeneca",
-              "Bayer",
-            ].map((name) => (
-              <span
-                key={name}
-                className="text-base sm:text-xl md:text-2xl font-bold text-gray-300 tracking-tight"
-              >
+              <span className="text-xs sm:text-sm font-semibold text-[#455A6F]/60 tracking-tight">
                 {name}
               </span>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

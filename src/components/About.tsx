@@ -311,7 +311,7 @@ export default function About() {
             </div>
             <a
               href="/contact"
-              className="relative inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#00AC94] bg-white hover:bg-gray-50 rounded-xl transition-all shrink-0"
+              className="relative inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#008F7A] bg-white hover:bg-gray-50 rounded-xl transition-all shrink-0"
             >
               Холбоо барих
               <ArrowRight className="w-4 h-4" />

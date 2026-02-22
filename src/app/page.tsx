@@ -4,7 +4,7 @@ import Stats from "@/components/Stats";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
 import Values from "@/components/Values";
-import Contact from "@/components/Contact";
+import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
         <Products />
         <Services />
         <Values />
-        <Contact />
+        <CTABanner />
       </main>
       <Footer />
     </>

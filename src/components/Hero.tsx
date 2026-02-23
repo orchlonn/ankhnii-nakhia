@@ -23,10 +23,10 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 sm:mt-6 text-[#455A6F] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-            Анхны Нахиа ХХК нь 2005 оноос хойш олон улсын стандартад нийцсэн эм,
-            эмнэлгийн хэрэгслийг Монгол Улсын эрүүл мэндийн салбарт тасралтгүй
-            нийлүүлж, дотоодын эрүүл мэндийн хэрэгцээг хангахад хувь нэмрээ оруулж
-            байна.
+            Анхны Нахиа ХХК нь 2007 оноос эм, гадаад худалдааны чиглэлээр үйл
+            ажиллагаа явуулж, 6 салбар эмийн сан, эм ханган нийлүүлэх
+            үйлчилгээгээр өрхийн эмнэлэг болон ард иргэддээ аюулгүй, чанартай
+            эмээр үйлчилж байна.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mt-8 sm:mt-10 justify-center animate-fade-in-up animation-delay-400">

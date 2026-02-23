@@ -9,11 +9,11 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
+  "Эмийн сангийн сүлжээ",
+  "Эм ханган нийлүүлэх",
   "Эм импортлох",
-  "Чанарын хяналт",
-  "Эмнэлгийн хэрэгсэл",
-  "Түгээлтийн сүлжээ",
-  "Бүртгэл, зөвшөөрөл",
+  "Эмнэлгийн багаж, тоног төхөөрөмж",
+  "Чанарын стандарт",
 ];
 
 export default function Footer() {
@@ -37,9 +37,9 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-sm text-[#455A6F] leading-relaxed mb-6">
-              2005 оноос хойш Монголын эрүүл мэндийн салбарт итгэлтэй
-              үйлчилж, олон улсын стандартын эм, эмнэлгийн хэрэгслийг
-              нийлүүлж байна.
+              2007 оноос эм, гадаад худалдааны чиглэлээр үйл ажиллагаа
+              явуулж, 6 салбар эмийн сантайгаар иргэдэд чанартай эмээр
+              үйлчилж байна.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-[#455A6F]/60">
-            &copy; 2005–2026 Анхны Нахиа ХХК. Бүх эрх хуулиар хамгаалагдсан.
+            &copy; 2007–2026 Анхны Нахиа ХХК. Бүх эрх хуулиар хамгаалагдсан.
           </p>
           <div className="flex items-center gap-4">
             <a href="#" className="text-[#455A6F]/40 hover:text-[#00AC94] transition-colors" aria-label="Facebook">

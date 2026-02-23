@@ -1,39 +1,41 @@
 import { Trophy, Smile, Shield, Sparkles } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-const values = [
-  {
-    icon: Trophy,
-    title: "Чанар",
-    desc: "Олон улсын GMP стандартад нийцсэн бүтээгдэхүүн нийлүүлж, чанарын баталгааг эрхэмлэдэг.",
-  },
-  {
-    icon: Smile,
-    title: "Найдвартай байдал",
-    desc: "2000 оноос хойш 25 гаруй жил тасралтгүй ажиллаж, 6 салбар эмийн сантайгаар иргэдэд үйлчилж байна.",
-  },
-  {
-    icon: Shield,
-    title: "Хариуцлага",
-    desc: "Эрүүл мэндийн салбарын стандартыг чанд мөрдөж, хариуцлагатай үйл ажиллагаа явуулдаг.",
-  },
-  {
-    icon: Sparkles,
-    title: "Инноваци",
-    desc: "Орчин үеийн технологи, шинэлэг шийдлүүдийг нэвтрүүлж, үйлчилгээгээ тасралтгүй сайжруулдаг.",
-  },
-];
+export default async function Values() {
+  const t = await getTranslations("values");
 
-export default function Values() {
+  const values = [
+    {
+      icon: Trophy,
+      title: t("quality.title"),
+      desc: t("quality.desc"),
+    },
+    {
+      icon: Smile,
+      title: t("reliability.title"),
+      desc: t("reliability.desc"),
+    },
+    {
+      icon: Shield,
+      title: t("responsibility.title"),
+      desc: t("responsibility.desc"),
+    },
+    {
+      icon: Sparkles,
+      title: t("innovation.title"),
+      desc: t("innovation.desc"),
+    },
+  ];
+
   return (
     <section className="py-12 sm:py-20 bg-[#fbf9fa]">
       <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-            Бидний үнэт зүйлс
+            {t("title")}
           </h2>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-xl mx-auto">
-            Бид дараах үнэт зүйлсийг үйл ажиллагааныхаа гол чиглэл болгон
-            баримталдаг.
+            {t("subtitle")}
           </p>
         </div>
 

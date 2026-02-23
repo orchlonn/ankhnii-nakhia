@@ -17,86 +17,88 @@ import {
   Smile,
   DollarSign,
   Building2,
-  ChevronRight,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-const policies = [
-  {
-    icon: Target,
-    title: "Тохирсон ажлын байр",
-    desc: "Ажилтан бүрийн ур чадвар, сонирхол, авьяас билэгт тохирсон ажлын байранд ажиллуулж, бүтээмжтэй, өндөр үр дүнтэй ажиллах нөхцөлийг бүрдүүлнэ.",
-  },
-  {
-    icon: Scale,
-    title: "Шударга үнэлгээ",
-    desc: "Хариуцлагыг тодорхой хуваарилж, объектив, шударга үнэлгээний тогтолцоог нэвтрүүлж ажилладаг.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Үр дүнд суурилсан урамшуулал",
-    desc: "Хөдөлмөрийн үнэ цэнийг бодитоор үнэлж, урт хугацааны тогтвортой, идэвхтэй ажиллах нөхцөлийг бий болгоно.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Тасралтгүй хөгжил",
-    desc: "Мэргэжлийн болон ерөнхий ур чадварыг системтэйгээр дээшлүүлэх сургалтын хөтөлбөрүүдийг хэрэгжүүлнэ.",
-  },
-  {
-    icon: Heart,
-    title: "Эерэг багийн соёл",
-    desc: "Хүндлэл, ойлголцол, бүтээлч уур амьсгалыг эрхэмлэсэн байгууллагын соёлыг бий болгоно.",
-  },
-];
+export default async function HR() {
+  const t = await getTranslations("hr");
 
-const whyUs = [
-  { icon: Award, text: "Үр дүнд суурилсан урамшууллын тогтолцоо" },
-  { icon: Briefcase, text: "Салбар хоорондын шилжих карьер боломж" },
-  { icon: Users, text: "Бүх ажилтнуудад тэгш дэвших боломж" },
-  { icon: DollarSign, text: "Өрсөлдөхүйц цалин, нэмэгдэл" },
-  { icon: Building2, text: "Таатай ажлын орчин" },
-  { icon: Smile, text: "Ур чадвартай, мэргэжлийн, нөхөрсөг баг" },
-];
+  const policies = [
+    {
+      icon: Target,
+      title: t("policy.rightFit.title"),
+      desc: t("policy.rightFit.desc"),
+    },
+    {
+      icon: Scale,
+      title: t("policy.fairEvaluation.title"),
+      desc: t("policy.fairEvaluation.desc"),
+    },
+    {
+      icon: TrendingUp,
+      title: t("policy.resultBasedReward.title"),
+      desc: t("policy.resultBasedReward.desc"),
+    },
+    {
+      icon: GraduationCap,
+      title: t("policy.continuousGrowth.title"),
+      desc: t("policy.continuousGrowth.desc"),
+    },
+    {
+      icon: Heart,
+      title: t("policy.teamCulture.title"),
+      desc: t("policy.teamCulture.desc"),
+    },
+  ];
 
-const steps = [
-  {
-    icon: Megaphone,
-    step: "01",
-    title: "Ажлын зар",
-    desc: "Мэргэжлийн чадварлаг боловсон хүчин хайж ажлын байрны зар нийтлэнэ.",
-  },
-  {
-    icon: FileText,
-    step: "02",
-    title: "Анкет хүлээн авах",
-    desc: "Нэр дэвшигчдийн анкетыг нууцлалтайгаар хүлээн авна.",
-  },
-  {
-    icon: Search,
-    step: "03",
-    title: "Анкет шалгаруулалт",
-    desc: "Тавигдсан шаардлагад нийцэж буй эсэхийг шалгана.",
-  },
-  {
-    icon: UserCheck,
-    step: "04",
-    title: "Анхан шатны ярилцлага",
-    desc: "Ур чадвар, тохирлыг үнэлэх ярилцлага хийнэ.",
-  },
-  {
-    icon: MessageSquare,
-    step: "05",
-    title: "Давтан ярилцлага",
-    desc: "Удирдлагатай уулзаж, ажлын байрны нарийвчилсан үнэлгээ хийнэ.",
-  },
-  {
-    icon: Handshake,
-    step: "06",
-    title: "Ажилд авах",
-    desc: "Гэрээ байгуулж, багийн гишүүн болох үйл явцыг эхлүүлнэ.",
-  },
-];
+  const whyUs = [
+    { icon: Award, text: t("whyUs.resultBasedReward") },
+    { icon: Briefcase, text: t("whyUs.careerMobility") },
+    { icon: Users, text: t("whyUs.equalOpportunity") },
+    { icon: DollarSign, text: t("whyUs.competitiveSalary") },
+    { icon: Building2, text: t("whyUs.workEnvironment") },
+    { icon: Smile, text: t("whyUs.friendlyTeam") },
+  ];
 
-export default function HR() {
+  const steps = [
+    {
+      icon: Megaphone,
+      step: "01",
+      title: t("recruitment.jobPosting.title"),
+      desc: t("recruitment.jobPosting.desc"),
+    },
+    {
+      icon: FileText,
+      step: "02",
+      title: t("recruitment.applicationReceive.title"),
+      desc: t("recruitment.applicationReceive.desc"),
+    },
+    {
+      icon: Search,
+      step: "03",
+      title: t("recruitment.screening.title"),
+      desc: t("recruitment.screening.desc"),
+    },
+    {
+      icon: UserCheck,
+      step: "04",
+      title: t("recruitment.initialInterview.title"),
+      desc: t("recruitment.initialInterview.desc"),
+    },
+    {
+      icon: MessageSquare,
+      step: "05",
+      title: t("recruitment.followUpInterview.title"),
+      desc: t("recruitment.followUpInterview.desc"),
+    },
+    {
+      icon: Handshake,
+      step: "06",
+      title: t("recruitment.hiring.title"),
+      desc: t("recruitment.hiring.desc"),
+    },
+  ];
+
   return (
     <section id="hr" className="bg-[#fbf9fa]">
       {/* Hero */}
@@ -107,21 +109,20 @@ export default function HR() {
         </div>
         <div className="relative max-w-[1088px] mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-28">
           <span className="inline-block text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider mb-3">
-            Хүний нөөц
+            {t("badge")}
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#243342] leading-tight mb-4">
-            Баг, багийн{" "}
-            <span className="text-[#00AC94]">ажиллагаа</span>
+            {t("heroTitle")}{" "}
+            <span className="text-[#00AC94]">{t("heroHighlight")}</span>
           </h1>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-xl leading-relaxed mb-7">
-            Бид ажилтан нэг бүрийн эерэг ажлын орчин, мэргэжлийн өсөлт,
-            тогтвортой хөгжлийг хамтдаа бий болгоно.
+            {t("heroDescription")}
           </p>
           <a
             href="#"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-[#00AC94] hover:bg-[#009882] rounded-xl transition-all"
           >
-            Нээлттэй ажлын байр
+            {t("openPositionsButton")}
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
@@ -132,14 +133,14 @@ export default function HR() {
         <div className="flex items-center gap-3 mb-3">
           <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
           <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">
-            Бодлого
+            {t("policy.badge")}
           </span>
         </div>
         <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-          Хүний нөөцийн бодлого
+          {t("policy.title")}
         </h2>
         <p className="text-xs sm:text-sm text-[#455A6F] max-w-3xl mb-10 sm:mb-12">
-          Бид ажилтнуудаа хөгжүүлж, тэдний чадавхийг дээд зэргээр ашиглах таатай орчныг бүрдүүлдэг. Мэргэжлийн сургалт, ур чадварын хөтөлбөрүүдээр дамжуулан ажилтан бүрийн өсөлт, хөгжлийг дэмжиж, байгууллагын тогтвортой хөгжилд хувь нэмрээ оруулдаг.
+          {t("policy.subtitle")}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
@@ -174,15 +175,15 @@ export default function HR() {
             <div className="flex items-center justify-center gap-3 mb-3">
               <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
               <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">
-                Давуу тал
+                {t("whyUs.badge")}
               </span>
               <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
             </div>
             <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-              Яагаад Анхны Нахиа гэж?
+              {t("whyUs.title")}
             </h2>
             <p className="text-sm sm:text-base text-[#455A6F] max-w-lg mx-auto">
-              Бидэнтэй нэгдэх шалтгаанууд
+              {t("whyUs.subtitle")}
             </p>
           </div>
 
@@ -210,15 +211,15 @@ export default function HR() {
           <div className="flex items-center justify-center gap-3 mb-3">
             <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
             <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">
-              Үе шатууд
+              {t("recruitment.badge")}
             </span>
             <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
           </div>
           <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-            Сонгон шалгаруулалтын үе шат
+            {t("recruitment.title")}
           </h2>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-lg mx-auto">
-            Бидний ажилд авах үйл явц нь ил тод, шударга зарчимд тулгуурладаг.
+            {t("recruitment.subtitle")}
           </p>
         </div>
 
@@ -254,16 +255,16 @@ export default function HR() {
               <Briefcase className="w-7 h-7 text-[#00AC94]" />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-[#243342]">
-              Бидэнтэй нэгдэх гэж байна уу?
+              {t("cta.title")}
             </h3>
             <p className="text-sm text-[#455A6F] max-w-sm">
-              Одоо нээлттэй байгаа ажлын байрны жагсаалттай танилцаарай.
+              {t("cta.description")}
             </p>
             <a
               href="#"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-white bg-[#00AC94] hover:bg-[#009882] rounded-xl transition-all mt-1"
             >
-              Нээлттэй ажлын байрууд
+              {t("cta.button")}
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

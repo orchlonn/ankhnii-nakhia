@@ -11,68 +11,54 @@ import {
   Award,
   ArrowRight,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import SpotlightBanner from "./SpotlightBanner";
 
-const values = [
-  {
-    icon: Trophy,
-    title: "Чанар",
-    desc: "MNS5260:2015 стандартыг баримтлан, Монгол Улсын эмийн бүртгэлд бүртгэгдсэн, чанарын аюулгүй байдлыг хангасан эмээр үйлчилдэг.",
-  },
-  {
-    icon: Smile,
-    title: "Найдвартай байдал",
-    desc: "2000 оноос хойш 25 гаруй жил тасралтгүй ажиллаж, 6 салбар эмийн сантайгаар иргэдэд үйлчилж байна.",
-  },
-  {
-    icon: Shield,
-    title: "Хариуцлага",
-    desc: "Хууль тогтоомжийг үйл ажиллагаандаа бүрэн хэрэгжүүлэн, хариуцлагатай ажилладаг.",
-  },
-  {
-    icon: Sparkles,
-    title: "Хүртээмж",
-    desc: "Эрүүл мэндийн даатгалын хөнгөлттэй үнээр үйлчлэн, эмийн зохистой хэрэглээг хэвшүүлэхийг зорьдог.",
-  },
-];
+export default async function About() {
+  const t = await getTranslations("about");
 
-const stats = [
-  { value: "2007", label: "Байгуулагдсан он" },
-  { value: "25+", label: "Жилийн туршлага" },
-  { value: "6", label: "Салбар эмийн сан" },
-  { value: "30+", label: "Нийт ажилтан" },
-  { value: "10+", label: "Эмийн төрөл" },
-  { value: "4", label: "Салбар нэгж" },
-];
+  const values = [
+    {
+      icon: Trophy,
+      title: t("values.quality.title"),
+      desc: t("values.quality.desc"),
+    },
+    {
+      icon: Smile,
+      title: t("values.reliability.title"),
+      desc: t("values.reliability.desc"),
+    },
+    {
+      icon: Shield,
+      title: t("values.responsibility.title"),
+      desc: t("values.responsibility.desc"),
+    },
+    {
+      icon: Sparkles,
+      title: t("values.accessibility.title"),
+      desc: t("values.accessibility.desc"),
+    },
+  ];
 
-const milestones = [
-  {
-    year: "2000",
-    text: "Байгууллагын үйл ажиллагаа эхэлж, эрүүл мэндийн салбарт анхны алхмаа тавив.",
-  },
-  {
-    year: "2007",
-    text: "Анхны Нахиа ХХК эм, гадаад худалдаа, газар тариалангийн чиглэлээр үүсгэн байгуулагдав.",
-  },
-  {
-    year: "2009",
-    text: 'Нийслэлийн ЭМГ-ын тусгай зөвшөөрлөөр "Анхны нахиа" эмийн сан нээгдэв.',
-  },
-  {
-    year: "2017",
-    text: "Эм, эмнэлгийн багаж, тоног төхөөрөмж ханган нийлүүлэх тусгай зөвшөөрөл авав.",
-  },
-  {
-    year: "2020",
-    text: "Салбар эмийн сангийн тоог 6 болгож өргөжүүлэн, 30+ ажилтантай болов.",
-  },
-  {
-    year: "2024",
-    text: "ОХУ, БНСВУ-аас 10+ төрлийн эмийг импортлон, цаашид Европ, АНУ руу өргөжихөөр зорьж байна.",
-  },
-];
+  const stats = [
+    { value: t("stats.founded.value"), label: t("stats.founded.label") },
+    { value: t("stats.experience.value"), label: t("stats.experience.label") },
+    { value: t("stats.branches.value"), label: t("stats.branches.label") },
+    { value: t("stats.staff.value"), label: t("stats.staff.label") },
+    { value: t("stats.medicines.value"), label: t("stats.medicines.label") },
+    { value: t("stats.units.value"), label: t("stats.units.label") },
+  ];
 
-export default function About() {
+  const milestones = [
+    { year: "2000", text: t("timeline.y2000") },
+    { year: "2007", text: t("timeline.y2007") },
+    { year: "2009", text: t("timeline.y2009") },
+    { year: "2017", text: t("timeline.y2017") },
+    { year: "2020", text: t("timeline.y2020") },
+    { year: "2024", text: t("timeline.y2024") },
+  ];
+
   return (
     <section id="about" className="bg-[#fbf9fa]">
       {/* Hero Banner */}
@@ -83,17 +69,14 @@ export default function About() {
         </div>
         <div className="relative max-w-[1088px] mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-28">
           <span className="inline-block text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider mb-3">
-            Бидний тухай
+            {t("badge")}
           </span>
           <h1 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#243342] leading-tight mb-4">
-            Монголын эрүүл мэндийн{" "}
-            <span className="text-[#00AC94]">найдвартай түнш</span>
+            {t("heroTitle")}{" "}
+            <span className="text-[#00AC94]">{t("heroHighlight")}</span>
           </h1>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-2xl leading-relaxed">
-            Анхны Нахиа ХХК нь 2007 онд эм, гадаад худалдаа, газар тариалангийн
-            чиглэлээр үүсгэн байгуулагдсан нэг хүний өмчлөлийн компани бөгөөд
-            өнөөдөр 6 салбар эмийн сан, эм ханган нийлүүлэх нэгжтэйгээр ажиллаж
-            байна.
+            {t("heroDescription")}
           </p>
         </div>
       </div>
@@ -107,12 +90,10 @@ export default function About() {
               <Target className="w-6 h-6 text-[#00AC94] group-hover:text-white transition-colors duration-300" />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-[#243342] mb-3">
-              Эрхэм зорилго
+              {t("mission.title")}
             </h3>
             <p className="text-sm sm:text-[15px] text-[#455A6F] leading-relaxed">
-              Аюулгүй, чанарын баталгаатай эм, эмнэлгийн хэрэгслээр эмнэлгийн
-              байгууллага, хүн амыг тасралтгүй, жигд хүртээмжтэй хангаж эм зүйн
-              тусламж үйлчилгээ үзүүлэх.
+              {t("mission.description")}
             </p>
           </div>
 
@@ -122,12 +103,10 @@ export default function About() {
               <Globe className="w-6 h-6 text-[#00AC94] group-hover:text-white transition-colors duration-300" />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-[#243342] mb-3">
-              Алсын хараа
+              {t("vision.title")}
             </h3>
             <p className="text-sm sm:text-[15px] text-[#455A6F] leading-relaxed">
-              Цаашдаа Европын холбооны Австри, Герман, Польш, АНУ, Австрали,
-              БНСУ зэрэг өндөр хөгжилтэй улс орнуудаас чанартай эм, эмнэлгийн
-              багаж тоног төхөөрөмжөөр ард иргэдээ ханган ажиллах.
+              {t("vision.description")}
             </p>
           </div>
         </div>
@@ -159,33 +138,16 @@ export default function About() {
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
               <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">
-                Түүх
+                {t("history.badge")}
               </span>
             </div>
             <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-5">
-              Бидний түүх
+              {t("history.title")}
             </h2>
             <div className="space-y-4 text-sm sm:text-[15px] text-[#455A6F] leading-relaxed">
-              <p>
-                Анхны Нахиа ХХК нь 2007 онд эм, гадаад худалдаа, газар
-                тариалангийн чиглэлээр үүсгэн байгуулагдсан нэг хүний өмчлөлийн
-                компани юм. Үүсгэн байгуулагч захирал Х.Сарнай нь Эм Зүйч
-                мэргэжилтэй бөгөөд мэргэжлээрээ 20 гаруй жил ажиллаж байна.
-              </p>
-              <p>
-                Нийслэлийн Эрүүл Мэндийн Газраас олгосон тусгай зөвшөөрлийн
-                дагуу 2009 оны 11-р сарт &quot;Анхны нахиа&quot; эмийн сан нээж,
-                өнөөдөр нийт 6 салбар эмийн сантай, 30 гаруй ажилтантай өргөжин
-                тэлсэн. Эрүүл Мэндийн даатгалын хөнгөлттэй үнээр үйлчлэн, өрхийн
-                эмнэлэг болон ард иргэддээ аюулгүй, чанартай эмээр хангаж байна.
-              </p>
-              <p>
-                2017 оноос эхлэн эм, эмнэлгийн багаж, тоног төхөөрөмж, дагалдах
-                хэрэгсэл ханган нийлүүлэх тусгай зөвшөөрөлтэйгөөр Хан-Уул
-                дүүргийн нутаг дэвсгэрт үйл ажиллагаа явуулж, ОХУ, БНСВУ-ын нэр
-                хүнд бүхий эмийн үйлдвэрүүдээс 10 гаруй төрлийн эмийг импортоор
-                оруулж ирж байна.
-              </p>
+              <p>{t("history.p1")}</p>
+              <p>{t("history.p2")}</p>
+              <p>{t("history.p3")}</p>
             </div>
           </div>
 
@@ -197,11 +159,10 @@ export default function About() {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-[#243342] mb-1">
-                  MNS5260:2015 стандарт
+                  {t("highlights.standard.title")}
                 </h4>
                 <p className="text-xs sm:text-sm text-[#455A6F] leading-relaxed">
-                  Эмийн сангийн бүтэц үйл ажиллагааны стандартыг баримтлан
-                  ажилладаг.
+                  {t("highlights.standard.desc")}
                 </p>
               </div>
             </div>
@@ -211,11 +172,10 @@ export default function About() {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-[#243342] mb-1">
-                  6 салбар эмийн сан
+                  {t("highlights.sixBranches.title")}
                 </h4>
                 <p className="text-xs sm:text-sm text-[#455A6F] leading-relaxed">
-                  Азын нахиа-1, Азын нахиа-2, Шинэ нахиа, Аз хүүхдийн эмнэлэг
-                  зэрэг салбартай.
+                  {t("highlights.sixBranches.desc")}
                 </p>
               </div>
             </div>
@@ -225,10 +185,10 @@ export default function About() {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-[#243342] mb-1">
-                  Мэргэжлийн баг
+                  {t("highlights.team.title")}
                 </h4>
                 <p className="text-xs sm:text-sm text-[#455A6F] leading-relaxed">
-                  Эм зүйч, жор баригч зэрэг 30+ мэргэжилтэн, ажилтантай.
+                  {t("highlights.team.desc")}
                 </p>
               </div>
             </div>
@@ -238,10 +198,10 @@ export default function About() {
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-[#243342] mb-1">
-                  Даатгалын хөнгөлөлт
+                  {t("highlights.insurance.title")}
                 </h4>
                 <p className="text-xs sm:text-sm text-[#455A6F] leading-relaxed">
-                  Эрүүл Мэндийн даатгалын хөнгөлттэй үнээр иргэдэд үйлчилдэг.
+                  {t("highlights.insurance.desc")}
                 </p>
               </div>
             </div>
@@ -256,12 +216,12 @@ export default function About() {
             <div className="flex items-center justify-center gap-3 mb-3">
               <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
               <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">
-                Хөгжлийн зам
+                {t("timeline.badge")}
               </span>
               <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
             </div>
             <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-              Бидний хөгжлийн замнал
+              {t("timeline.title")}
             </h2>
           </div>
 
@@ -294,16 +254,15 @@ export default function About() {
           <div className="flex items-center justify-center gap-3 mb-3">
             <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
             <span className="text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider">
-              Үнэт зүйлс
+              {t("values.badge")}
             </span>
             <div className="w-8 h-[3px] rounded-full bg-[#00AC94]" />
           </div>
           <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-            Бидний үнэт зүйлс
+            {t("values.title")}
           </h2>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-xl mx-auto">
-            Бид дараах үнэт зүйлсийг үйл ажиллагааныхаа гол чиглэл болгон
-            баримталдаг.
+            {t("values.subtitle")}
           </p>
         </div>
 
@@ -333,20 +292,19 @@ export default function About() {
           <SpotlightBanner>
             <div className="relative">
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">
-                Бидэнтэй хамтран ажиллах
+                {t("cta.title")}
               </h3>
               <p className="text-sm text-white/70 max-w-md">
-                Эм, эмнэлгийн хэрэгслийн захиалга өгөх эсвэл хамтын ажиллагааны
-                талаар мэдээлэл авахыг хүсвэл бидэнтэй холбогдоорой.
+                {t("cta.description")}
               </p>
             </div>
-            <a
+            <Link
               href="/contact"
               className="relative inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#008F7A] bg-white hover:bg-gray-50 rounded-xl transition-all shrink-0"
             >
-              Холбоо барих
+              {t("cta.button")}
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </SpotlightBanner>
         </div>
       </div>

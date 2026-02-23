@@ -2,36 +2,38 @@
 
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    label: "Хаяг",
-    value: "Улаанбаатар хот, Сүхбаатар дүүрэг, Бага тойруу",
-    href: undefined,
-  },
-  {
-    icon: Phone,
-    label: "Утас",
-    value: "+976 7011-1234",
-    href: "tel:+97670111234",
-  },
-  {
-    icon: Mail,
-    label: "И-мэйл",
-    value: "info@ankhniinakhia.mn",
-    href: "mailto:info@ankhniinakhia.mn",
-  },
-  {
-    icon: Clock,
-    label: "Ажлын цаг",
-    value: "Даваа - Баасан: 09:00 - 18:00",
-    href: undefined,
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const t = useTranslations("contact");
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      label: t("address.label"),
+      value: t("address.value"),
+      href: undefined,
+    },
+    {
+      icon: Phone,
+      label: t("phone.label"),
+      value: t("phone.value"),
+      href: "tel:+97670111234",
+    },
+    {
+      icon: Mail,
+      label: t("email.label"),
+      value: t("email.value"),
+      href: "mailto:info@ankhniinakhia.mn",
+    },
+    {
+      icon: Clock,
+      label: t("hours.label"),
+      value: t("hours.value"),
+      href: undefined,
+    },
+  ];
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -44,11 +46,10 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
           <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-            Холбоо барих
+            {t("title")}
           </h2>
           <p className="text-sm sm:text-base text-[#455A6F]">
-            Бүтээгдэхүүний талаар дэлгэрэнгүй мэдээлэл авах эсвэл захиалга
-            өгөхийг хүсвэл бидэнтэй холбогдоорой.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -88,16 +89,16 @@ export default function Contact() {
                     <Send className="w-6 h-6 text-[#00AC94]" />
                   </div>
                   <h3 className="text-lg font-semibold text-[#243342] mb-2">
-                    Мэдээлэл амжилттай илгээгдлээ!
+                    {t("success.title")}
                   </h3>
                   <p className="text-sm text-[#455A6F]">
-                    Бид тантай удахгүй холбогдох болно.
+                    {t("success.description")}
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="mt-5 px-5 py-2 text-sm font-medium text-[#00AC94] hover:bg-[#00AC94]/5 rounded-lg transition-colors"
                   >
-                    Дахин илгээх
+                    {t("success.resendButton")}
                   </button>
                 </div>
               ) : (
@@ -105,23 +106,23 @@ export default function Contact() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-[#243342] mb-1.5">
-                        Нэр
+                        {t("form.nameLabel")}
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Таны нэр"
+                        placeholder={t("form.namePlaceholder")}
                         className="w-full px-4 py-2.5 rounded-xl bg-white border border-gray-200 focus:border-[#00AC94] focus:ring-2 focus:ring-[#00AC94]/20 outline-none transition-all text-sm text-[#243342] placeholder:text-gray-400"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-[#243342] mb-1.5">
-                        Утас
+                        {t("form.phoneLabel")}
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="+976"
+                        placeholder={t("form.phonePlaceholder")}
                         className="w-full px-4 py-2.5 rounded-xl bg-white border border-gray-200 focus:border-[#00AC94] focus:ring-2 focus:ring-[#00AC94]/20 outline-none transition-all text-sm text-[#243342] placeholder:text-gray-400"
                       />
                     </div>
@@ -129,19 +130,19 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium text-[#243342] mb-1.5">
-                      И-мэйл
+                      {t("form.emailLabel")}
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="email@example.com"
+                      placeholder={t("form.emailPlaceholder")}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-gray-200 focus:border-[#00AC94] focus:ring-2 focus:ring-[#00AC94]/20 outline-none transition-all text-sm text-[#243342] placeholder:text-gray-400"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-[#243342] mb-1.5">
-                      Сэдэв
+                      {t("form.subjectLabel")}
                     </label>
                     <select
                       required
@@ -149,23 +150,23 @@ export default function Contact() {
                       defaultValue=""
                     >
                       <option value="" disabled>
-                        Сонгох...
+                        {t("form.subjectPlaceholder")}
                       </option>
-                      <option>Бүтээгдэхүүний мэдээлэл</option>
-                      <option>Захиалга өгөх</option>
-                      <option>Хамтын ажиллагаа</option>
-                      <option>Бусад</option>
+                      <option>{t("form.subjectProductInfo")}</option>
+                      <option>{t("form.subjectOrder")}</option>
+                      <option>{t("form.subjectPartnership")}</option>
+                      <option>{t("form.subjectOther")}</option>
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-[#243342] mb-1.5">
-                      Мессеж
+                      {t("form.messageLabel")}
                     </label>
                     <textarea
                       required
                       rows={4}
-                      placeholder="Таны мессеж..."
+                      placeholder={t("form.messagePlaceholder")}
                       className="w-full px-4 py-2.5 rounded-xl bg-white border border-gray-200 focus:border-[#00AC94] focus:ring-2 focus:ring-[#00AC94]/20 outline-none transition-all text-sm text-[#243342] placeholder:text-gray-400 resize-none"
                     />
                   </div>
@@ -175,7 +176,7 @@ export default function Contact() {
                     className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#00AC94] hover:bg-[#009882] text-white text-sm font-medium rounded-xl transition-all"
                   >
                     <Send className="w-4 h-4" />
-                    Илгээх
+                    {t("form.submitButton")}
                   </button>
                 </form>
               )}

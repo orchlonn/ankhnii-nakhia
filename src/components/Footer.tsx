@@ -1,60 +1,62 @@
 import { Pill, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
-const quickLinks = [
-  { label: "Нүүр", href: "/" },
-  { label: "Бидний тухай", href: "/about" },
-  { label: "Үйлчилгээ", href: "/services" },
-  { label: "Бүтээгдэхүүн", href: "/products" },
-  { label: "Холбоо барих", href: "/contact" },
-];
+export default async function Footer() {
+  const t = await getTranslations("footer");
 
-const serviceLinks = [
-  "Эмийн сангийн сүлжээ",
-  "Эм ханган нийлүүлэх",
-  "Эм импортлох",
-  "Эмнэлгийн багаж, тоног төхөөрөмж",
-  "Чанарын стандарт",
-];
+  const quickLinks = [
+    { label: t("quickLinks.home"), href: "/" as const },
+    { label: t("quickLinks.about"), href: "/about" as const },
+    { label: t("quickLinks.services"), href: "/services" as const },
+    { label: t("quickLinks.products"), href: "/products" as const },
+    { label: t("quickLinks.contact"), href: "/contact" as const },
+  ];
 
-export default function Footer() {
+  const serviceLinks = [
+    t("serviceLinks.pharmacyNetwork"),
+    t("serviceLinks.supply"),
+    t("serviceLinks.import"),
+    t("serviceLinks.equipment"),
+    t("serviceLinks.quality"),
+  ];
+
   return (
     <footer className="bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
           <div className="col-span-2 sm:col-span-2 lg:col-span-1">
-            <a href="/" className="flex items-center gap-3 mb-5">
+            <Link href="/" className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl bg-[#00AC94] flex items-center justify-center">
                 <Pill className="w-5 h-5 text-white" />
               </div>
               <div>
                 <span className="text-lg font-bold text-[#243342]">
-                  Анхны Нахиа
+                  {t("companyName")}
                 </span>
                 <span className="block text-[10px] text-[#00AC94] font-medium -mt-0.5">
-                  PHARMA LLC
+                  {t("companySubtitle")}
                 </span>
               </div>
-            </a>
+            </Link>
             <p className="text-sm text-[#455A6F] leading-relaxed mb-6">
-              2007 оноос эм, гадаад худалдааны чиглэлээр үйл ажиллагаа
-              явуулж, 6 салбар эмийн сантайгаар иргэдэд чанартай эмээр
-              үйлчилж байна.
+              {t("companyDesc")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#243342] font-semibold mb-5">Хурдан холбоос</h4>
+            <h4 className="text-[#243342] font-semibold mb-5">{t("quickLinksTitle")}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-[#455A6F] hover:text-[#00AC94] transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -62,7 +64,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-[#243342] font-semibold mb-5">Үйлчилгээ</h4>
+            <h4 className="text-[#243342] font-semibold mb-5">{t("servicesTitle")}</h4>
             <ul className="space-y-3">
               {serviceLinks.map((service) => (
                 <li key={service}>
@@ -74,12 +76,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[#243342] font-semibold mb-5">Холбоо барих</h4>
+            <h4 className="text-[#243342] font-semibold mb-5">{t("contactTitle")}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#00AC94] mt-0.5 shrink-0" />
                 <span className="text-sm text-[#455A6F]">
-                  Улаанбаатар хот, Сүхбаатар дүүрэг
+                  {t("address")}
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -88,7 +90,7 @@ export default function Footer() {
                   href="tel:+97670111234"
                   className="text-sm text-[#455A6F] hover:text-[#00AC94] transition-colors"
                 >
-                  +976 7011-1234
+                  {t("phone")}
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -97,7 +99,7 @@ export default function Footer() {
                   href="mailto:info@ankhniinakhia.mn"
                   className="text-sm text-[#455A6F] hover:text-[#00AC94] transition-colors"
                 >
-                  info@ankhniinakhia.mn
+                  {t("email")}
                 </a>
               </li>
             </ul>
@@ -107,7 +109,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs sm:text-sm text-[#455A6F]/60">
-            &copy; 2007–2026 Анхны Нахиа ХХК. Бүх эрх хуулиар хамгаалагдсан.
+            {t("copyright")}
           </p>
           <div className="flex items-center gap-4">
             <a href="#" className="text-[#455A6F]/40 hover:text-[#00AC94] transition-colors" aria-label="Facebook">

@@ -1,8 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Newspaper } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const t = await getTranslations("news");
+
   return (
     <>
       <Header />
@@ -10,14 +13,14 @@ export default function NewsPage() {
         <section className="bg-[#fbf9fa] pt-[72px]">
           <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-14 sm:py-20 md:py-28">
             <span className="inline-block text-xs sm:text-sm font-semibold text-[#00AC94] uppercase tracking-wider mb-3">
-              Мэдээ мэдээлэл
+              {t("badge")}
             </span>
             <h1 className="text-2xl sm:text-3xl md:text-[40px] font-semibold text-[#243342] leading-tight mb-4">
-              Мэдээ{" "}
-              <span className="text-[#00AC94]">мэдээлэл</span>
+              {t("heroTitle")}{" "}
+              <span className="text-[#00AC94]">{t("heroHighlight")}</span>
             </h1>
             <p className="text-sm sm:text-base text-[#455A6F] max-w-xl leading-relaxed">
-              Анхны Нахиа компанийн сүүлийн үеийн мэдээ, мэдээллүүд.
+              {t("heroDescription")}
             </p>
           </div>
 
@@ -27,10 +30,10 @@ export default function NewsPage() {
                 <Newspaper className="w-8 h-8 text-[#00AC94]" />
               </div>
               <h3 className="text-lg font-semibold text-[#243342] mb-2">
-                Удахгүй...
+                {t("comingSoon")}
               </h3>
               <p className="text-sm text-[#455A6F]">
-                Мэдээ мэдээллийн хэсэг удахгүй нэмэгдэх болно.
+                {t("comingSoonDesc")}
               </p>
             </div>
           </div>

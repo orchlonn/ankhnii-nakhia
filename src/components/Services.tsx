@@ -1,40 +1,42 @@
 import { Truck, Building2, Stethoscope, PackageCheck, ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-const services = [
-  {
-    icon: Building2,
-    title: "Эмийн сангийн сүлжээ",
-    desc: "2009 оноос 6 салбар эмийн сантайгаар Эрүүл Мэндийн даатгалын хөнгөлттэй үнээр өрхийн эмнэлэг болон иргэдэд аюулгүй, чанартай эмээр үйлчилж байна.",
-  },
-  {
-    icon: Truck,
-    title: "Эм ханган нийлүүлэх",
-    desc: "2017 оноос тусгай зөвшөөрлийн дагуу эм, эмнэлгийн багаж, тоног төхөөрөмж, дагалдах хэрэгсэл ханган нийлүүлэх үйл ажиллагаа явуулж байна.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Эм импортлох",
-    desc: "ОХУ, БНСВУ-ын нэр хүнд бүхий эмийн үйлдвэрүүдээс 10 гаруй төрлийн эмийг Монгол Улсын эмийн бүртгэлд бүртгүүлэн импортоор оруулж ирж байна.",
-  },
-  {
-    icon: PackageCheck,
-    title: "Чанарын стандарт",
-    desc: "MNS5260:2015 стандартыг баримтлан, Монгол Улсын эмийн бүртгэлд бүртгэгдсэн, чанарын аюулгүй байдлыг хангасан эмээр үйлчилдэг.",
-  },
-];
+export default async function Services() {
+  const t = await getTranslations("services");
 
-export default function Services() {
+  const services = [
+    {
+      icon: Building2,
+      title: t("pharmacyNetwork.title"),
+      desc: t("pharmacyNetwork.desc"),
+    },
+    {
+      icon: Truck,
+      title: t("supplyService.title"),
+      desc: t("supplyService.desc"),
+    },
+    {
+      icon: Stethoscope,
+      title: t("import.title"),
+      desc: t("import.desc"),
+    },
+    {
+      icon: PackageCheck,
+      title: t("quality.title"),
+      desc: t("quality.desc"),
+    },
+  ];
+
   return (
     <section id="services" className="py-12 sm:py-20 bg-[#fbf9fa]">
       <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-            Бизнесийн чиглэлүүд
+            {t("title")}
           </h2>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-xl mx-auto">
-            Эмийн сангийн сүлжээ, эм ханган нийлүүлэх, импортын үйл
-            ажиллагааг хууль тогтоомжийн дагуу чанартай явуулж байна.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -58,7 +60,7 @@ export default function Services() {
                 href="#"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-[#00AC94] hover:text-[#009882] transition-colors"
               >
-                Дэлгэрэнгүй
+                {t("learnMore")}
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

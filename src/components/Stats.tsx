@@ -1,22 +1,26 @@
-const stats = [
-  {
-    value: "25+",
-    label: "Жилийн туршлага",
-    desc: "2000 оноос хойш эрүүл мэндийн салбарт тасралтгүй үйлчилж байна",
-  },
-  {
-    value: "6",
-    label: "Салбар эмийн сан",
-    desc: "Улаанбаатар хотод 6 салбар эмийн сантайгаар иргэдэд үйлчилж байна",
-  },
-  {
-    value: "30+",
-    label: "Мэргэжилтэн, ажилтан",
-    desc: "Эм зүйч, жор баригч, мэргэжлийн боловсон хүчнээр хангагдсан",
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function Stats() {
+export default async function Stats() {
+  const t = await getTranslations("stats");
+
+  const stats = [
+    {
+      value: t("experience.value"),
+      label: t("experience.label"),
+      desc: t("experience.desc"),
+    },
+    {
+      value: t("branches.value"),
+      label: t("branches.label"),
+      desc: t("branches.desc"),
+    },
+    {
+      value: t("staff.value"),
+      label: t("staff.label"),
+      desc: t("staff.desc"),
+    },
+  ];
+
   return (
     <section className="py-12 sm:py-16 bg-[#fbf9fa]">
       <div className="max-w-[1088px] mx-auto px-4 sm:px-6">

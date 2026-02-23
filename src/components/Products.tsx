@@ -1,50 +1,52 @@
 import { Building2, MapPin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-const branches = [
-  {
-    name: "Анхны нахиа эмийн сан",
-    desc: "Үндсэн эмийн сан, 2009 оноос үйл ажиллагаа явуулж байна",
-    type: "pharmacy",
-  },
-  {
-    name: "Азын нахиа-1",
-    desc: "Салбар нэгж",
-    type: "branch",
-  },
-  {
-    name: "Азын нахиа-2",
-    desc: "Салбар нэгж",
-    type: "branch",
-  },
-  {
-    name: "Шинэ нахиа",
-    desc: "Салбар нэгж",
-    type: "branch",
-  },
-  {
-    name: "Аз хүүхдийн эмнэлэг",
-    desc: "Хүүхдийн эмнэлгийн салбар",
-    type: "branch",
-  },
-  {
-    name: "Эм ханган нийлүүлэх нэгж",
-    desc: "Хан-Уул дүүрэг, 2017 оноос үйл ажиллагаа явуулж байна",
-    type: "supply",
-  },
-];
+export default async function Products() {
+  const t = await getTranslations("products");
 
-export default function Products() {
+  const branches = [
+    {
+      name: t("ankhnyNakhia.name"),
+      desc: t("ankhnyNakhia.desc"),
+      type: "pharmacy",
+    },
+    {
+      name: t("azynNakhia1.name"),
+      desc: t("azynNakhia1.desc"),
+      type: "branch",
+    },
+    {
+      name: t("azynNakhia2.name"),
+      desc: t("azynNakhia2.desc"),
+      type: "branch",
+    },
+    {
+      name: t("shineNakhia.name"),
+      desc: t("shineNakhia.desc"),
+      type: "branch",
+    },
+    {
+      name: t("azKids.name"),
+      desc: t("azKids.desc"),
+      type: "branch",
+    },
+    {
+      name: t("supply.name"),
+      desc: t("supply.desc"),
+      type: "supply",
+    },
+  ];
+
   return (
     <section id="products" className="py-12 sm:py-20 bg-[#fbf9fa]">
       <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14">
           <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
-            Салбар сүлжээ
+            {t("title")}
           </h2>
           <p className="text-sm sm:text-base text-[#455A6F] max-w-xl mx-auto">
-            6 салбар эмийн сан, эм ханган нийлүүлэх нэгжтэйгээр иргэдэд
-            үйлчилж байна
+            {t("subtitle")}
           </p>
         </div>
 

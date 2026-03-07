@@ -33,15 +33,15 @@ export default async function SocialResponsibilityPage() {
           <div className="bg-white">
             <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-14 sm:py-20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-                <div className="text-sm sm:text-[15px] text-[#455A6F] leading-relaxed text-justify">
-                  <p>{t("socialResponsibility.p2")}</p>
-                </div>
                 <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#00AC94]/5 via-[#00AC94]/10 to-[#00AC94]/5 border-2 border-dashed border-[#00AC94]/20 flex items-center justify-center overflow-hidden">
                   <img
                     src="/images/social-responsibility-2.jpg"
                     alt={t("socialResponsibility.title")}
                     className="w-full h-full object-cover"
                   />
+                </div>
+                <div className="text-sm sm:text-[15px] text-[#455A6F] leading-relaxed text-justify">
+                  <p>{t("socialResponsibility.p2")}</p>
                 </div>
               </div>
             </div>

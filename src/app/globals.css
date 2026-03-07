@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf9fa;
-  --foreground: #243342;
+  --background: #ffffff;
+  --foreground: #1a1a2e;
   --primary: #00AC94;
   --primary-dark: #009882;
-  --primary-light: #AAE3DB;
-  --secondary: #243342;
-  --secondary-dark: #1a2530;
-  --text-body: #455A6F;
+  --primary-light: #e6f7f4;
+  --secondary: #1a1a2e;
+  --secondary-dark: #12121f;
+  --text-body: #5a5a72;
   --card-bg: #ffffff;
-  --section-bg: #F9FAFB;
+  --section-bg: #f8f9fc;
+  --navy: #1a1a2e;
+  --navy-light: #2d2d4a;
 }
 
 @theme inline {
@@ -22,8 +24,11 @@
   --color-secondary: var(--secondary);
   --color-secondary-dark: var(--secondary-dark);
   --color-text-body: var(--text-body);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-playfair: var(--font-playfair);
 }
 
 body {
@@ -75,6 +80,11 @@ html {
   }
 }
 
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
@@ -106,14 +116,24 @@ html {
   opacity: 0;
 }
 
-/* Card hover shadow with teal tint */
+/* Card hover effect */
 .card-hover {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card-hover:hover {
-  box-shadow: 0px 12px 48px rgba(0, 172, 148, 0.2);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
+}
+
+/* Partner logos scroll */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 60s linear infinite;
 }
 
 /* Floating bubbles */
@@ -140,4 +160,12 @@ html {
   border-radius: 50%;
   filter: blur(80px);
   pointer-events: none;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, #00d4aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

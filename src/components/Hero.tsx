@@ -1,4 +1,4 @@
-import { ShoppingCart, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export default async function Hero() {
@@ -7,43 +7,34 @@ export default async function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#fbf9fa] pt-[72px]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#00AC94] via-[#008F7A] to-[#005C4F]"
     >
-      {/* Decorative blurred circles */}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+
+      {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="blur-circle w-[500px] h-[500px] bg-[#AAE3DB]/30 -top-40 -right-20 absolute" />
-        <div className="blur-circle w-[400px] h-[400px] bg-[#AAE3DB]/20 bottom-0 -left-40 absolute" />
-        <div className="blur-circle w-[300px] h-[300px] bg-[#00AC94]/10 top-1/3 left-1/3 absolute" />
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-white/5" />
+        <div className="absolute -bottom-48 -left-48 w-[500px] h-[500px] rounded-full bg-white/5" />
+        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-white/3" />
       </div>
 
-      <div className="relative max-w-[1088px] mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-[40px] font-semibold text-[#243342] leading-tight animate-fade-in-up">
-            {t("titleLine1")}
-            <br className="hidden sm:block" />
-            {t("titleLine2")}{" "}
-            <span className="text-[#00AC94]">{t("titleHighlight")}</span>
-          </h1>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[72px] w-full">
+        <div className="py-20 sm:py-28 md:py-36 flex flex-col items-center text-center">
+          <div className="animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight font-[var(--font-playfair)] max-w-4xl">
+              {t("titleHighlight")}
+            </h1>
 
-          <p className="mt-5 sm:mt-6 text-[#455A6F] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-            {t("description")}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 mt-8 sm:mt-10 justify-center animate-fade-in-up animation-delay-400">
-            <a
-              href="#products"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-7 sm:py-3.5 text-sm font-medium text-[#243342] border border-gray-300 rounded-xl hover:border-[#00AC94] hover:text-[#00AC94] transition-all"
-            >
-              <ShoppingCart className="w-4 h-4" />
-              {t("orderButton")}
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:px-7 sm:py-3.5 text-sm font-medium text-white bg-[#00AC94] hover:bg-[#009882] rounded-xl transition-all"
-            >
-              {t("contactButton")}
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10 sm:mt-12 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-[15px] font-semibold text-[#00AC94] bg-white hover:bg-gray-100 rounded-full transition-all shadow-lg"
+              >
+                {t("contactButton")}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

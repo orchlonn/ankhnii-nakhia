@@ -1,4 +1,4 @@
-import { Building2, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 export default async function Products() {
@@ -8,69 +8,59 @@ export default async function Products() {
     {
       name: t("ankhnyNakhia.name"),
       desc: t("ankhnyNakhia.desc"),
-      type: "pharmacy",
     },
     {
       name: t("azynNakhia1.name"),
       desc: t("azynNakhia1.desc"),
-      type: "branch",
     },
     {
       name: t("azynNakhia2.name"),
       desc: t("azynNakhia2.desc"),
-      type: "branch",
     },
     {
       name: t("shineNakhia.name"),
       desc: t("shineNakhia.desc"),
-      type: "branch",
     },
     {
       name: t("azKids.name"),
       desc: t("azKids.desc"),
-      type: "branch",
     },
     {
       name: t("supply.name"),
       desc: t("supply.desc"),
-      type: "supply",
     },
   ];
 
   return (
-    <section id="products" className="py-12 sm:py-20 bg-[#fbf9fa]">
-      <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
+    <section id="products" className="py-16 sm:py-24 bg-[#f8f9fc]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-14">
-          <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
+        <div className="mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-4">
             {t("title")}
           </h2>
-          <p className="text-sm sm:text-base text-[#455A6F] max-w-xl mx-auto">
+          <p className="text-[#5a5a72] text-base sm:text-lg max-w-2xl">
             {t("subtitle")}
           </p>
         </div>
 
-        {/* Branch Grid */}
+        {/* Branch Grid - Asklepiy style cards with arrows */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {branches.map((branch) => (
             <div
               key={branch.name}
-              className="flex items-start gap-4 bg-white rounded-2xl p-5 sm:p-6 border border-gray-100 hover:border-[#00AC94]/30 hover:shadow-sm transition-all"
+              className="group bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 hover:border-[#00AC94]/30 hover:shadow-lg hover:shadow-[#00AC94]/5 transition-all duration-300 cursor-pointer flex items-start justify-between gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#00AC94]/10 flex items-center justify-center shrink-0">
-                {branch.type === "supply" ? (
-                  <MapPin className="w-5 h-5 text-[#00AC94]" />
-                ) : (
-                  <Building2 className="w-5 h-5 text-[#00AC94]" />
-                )}
-              </div>
-              <div>
-                <h3 className="text-sm sm:text-base font-semibold text-[#243342] mb-1">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-[15px] sm:text-base font-semibold text-[#1a1a2e] mb-1.5 group-hover:text-[#00AC94] transition-colors">
                   {branch.name}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#455A6F]">
+                <p className="text-sm text-[#5a5a72] leading-relaxed">
                   {branch.desc}
                 </p>
+              </div>
+              <div className="w-9 h-9 rounded-full bg-[#00AC94]/10 group-hover:bg-[#00AC94] flex items-center justify-center shrink-0 transition-all duration-300 mt-0.5">
+                <ArrowRight className="w-4 h-4 text-[#00AC94] group-hover:text-white transition-colors duration-300" />
               </div>
             </div>
           ))}

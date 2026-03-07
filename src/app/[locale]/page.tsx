@@ -1,9 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
-import Products from "@/components/Products";
-import Services from "@/components/Services";
+import CompanyIntro from "@/components/CompanyIntro";
 import Values from "@/components/Values";
+import Partners from "@/components/Partners";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
 
@@ -14,9 +14,9 @@ export default function Home() {
       <main>
         <Hero />
         <Stats />
-        <Products />
-        <Services />
+        <CompanyIntro />
         <Values />
+        <Partners variant="scroll" />
         <CTABanner />
       </main>
       <Footer />

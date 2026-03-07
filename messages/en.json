@@ -1,113 +1,68 @@
 {
   "metadata": {
     "title": "Ankhnii Nakhia | Pharmacy & Pharmaceutical Supplier",
-    "description": "Ankhnii Nakhia LLC - A company operating in pharmaceuticals and foreign trade since 2007. 6 branch pharmacies, pharmaceutical supply services. Ulaanbaatar, Mongolia."
+    "description": "Ankhnii Nakhia LLC - Importing, supplying and selling pharmaceuticals and medical equipment since 2007."
   },
   "header": {
     "companyName": "Ankhnii Nakhia",
     "companySubtitle": "PHARMA LLC",
     "nav": {
+      "home": "Home",
       "about": "About Us",
+      "aboutDropdown": {
+        "ceoMessage": "CEO's Message",
+        "company": "About the Company",
+        "partners": "Partners",
+        "missionValues": "Mission & Values",
+        "socialResponsibility": "Social Responsibility"
+      },
       "services": "Services",
-      "products": "Branches",
-      "hr": "Careers",
-      "news": "News"
+      "servicesDropdown": {
+        "distribution": "Pharmaceutical Distribution Center",
+        "pharmacy": "Pharmacy",
+        "childrenHospital": "Children's Hospital"
+      }
     },
     "contactButton": "Contact Us"
   },
   "hero": {
-    "titleLine1": "World-class pharmaceutical and health",
-    "titleLine2": "products",
-    "titleHighlight": "delivered to you.",
-    "description": "Ankhnii Nakhia LLC has been operating in pharmaceuticals and foreign trade since 2007, serving family clinics and citizens with safe, quality medicines through 6 branch pharmacies and pharmaceutical supply services.",
+    "titleLine1": "A Trusted Partner in Mongolia's Healthcare Sector",
+    "titleLine2": "",
+    "titleHighlight": "Quality. Trust. A Healthy Future.",
+    "description": "Ankhnii Nakhia LLC was established in 2007 in pharmaceutical importing, supply, sales, agriculture, and foreign trade. Today we operate a Pharmaceutical Distribution Center, 6 branch pharmacies, and Az Children's Hospital with over 40 employees, serving continuously for 17 years.",
     "orderButton": "Place Order",
     "contactButton": "Contact Us"
   },
   "stats": {
-    "experience": {
-      "value": "25+",
-      "label": "Years of Experience",
-      "desc": "Continuously serving the healthcare sector since 2000"
-    },
-    "branches": {
-      "value": "6",
-      "label": "Branch Pharmacies",
-      "desc": "Serving citizens across 6 branch pharmacies in Ulaanbaatar"
-    },
-    "staff": {
-      "value": "30+",
-      "label": "Professionals & Staff",
-      "desc": "Staffed with pharmacists, dispensers, and qualified professionals"
-    }
+    "founded": { "value": "2007", "label": "Founded" },
+    "experience": { "value": "17+", "label": "Years of Experience" },
+    "branches": { "value": "6", "label": "Branch Pharmacies" },
+    "staff": { "value": "40+", "label": "Total Staff" },
+    "medicines": { "value": "10+", "label": "Medicine Types" }
   },
-  "products": {
-    "title": "Branch Network",
-    "subtitle": "Serving citizens through 6 branch pharmacies and a pharmaceutical supply unit",
-    "ankhnyNakhia": {
-      "name": "Ankhnii Nakhia Pharmacy",
-      "desc": "Main pharmacy, operating since 2009"
-    },
-    "azynNakhia1": {
-      "name": "Azyn Nakhia-1",
-      "desc": "Branch unit"
-    },
-    "azynNakhia2": {
-      "name": "Azyn Nakhia-2",
-      "desc": "Branch unit"
-    },
-    "shineNakhia": {
-      "name": "Shine Nakhia",
-      "desc": "Branch unit"
-    },
-    "azKids": {
-      "name": "Az Children's Hospital",
-      "desc": "Children's hospital branch"
-    },
-    "supply": {
-      "name": "Pharmaceutical Supply Unit",
-      "desc": "Khan-Uul district, operating since 2017"
-    }
-  },
-  "services": {
-    "title": "Business Directions",
-    "subtitle": "Operating pharmacy networks, pharmaceutical supply, and import activities in compliance with regulations.",
-    "pharmacyNetwork": {
-      "title": "Pharmacy Network",
-      "desc": "Since 2009, serving family clinics and citizens with safe, quality medicines at Health Insurance discounted prices across 6 branch pharmacies."
-    },
-    "supplyService": {
-      "title": "Pharmaceutical Supply",
-      "desc": "Since 2017, supplying medicines, medical instruments, equipment, and accessories under special license."
-    },
-    "import": {
-      "title": "Medicine Import",
-      "desc": "Importing over 10 types of medicines registered in Mongolia's pharmaceutical registry from reputable manufacturers in Russia and Vietnam."
-    },
-    "quality": {
-      "title": "Quality Standards",
-      "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements."
-    },
-    "learnMore": "Learn More"
+  "companyIntro": {
+    "badge": "About Us",
+    "title": "Ankhnii Nakhia LLC",
+    "description": "Ankhnii Nakhia LLC was established in 2007 in pharmaceutical importing, supply, sales, agriculture, and foreign trade. Today we operate a Pharmaceutical Distribution Center, 6 branch pharmacies, and Az Children's Hospital with over 40 employees, serving continuously for 17 years.",
+    "imagePlaceholder": "Image coming soon"
   },
   "values": {
-    "title": "Our Values",
-    "subtitle": "We uphold the following values as the core principles of our operations.",
     "quality": {
-      "title": "Quality",
-      "desc": "Supplying products that meet international GMP standards and prioritizing quality assurance."
+      "title": "Quality Products & Service",
+      "desc": "We supply high-quality medicines and medical supplies, implementing international standards and introducing the latest technologies and innovations."
+    },
+    "affordability": {
+      "title": "Affordable Pricing",
+      "desc": "By working directly with manufacturers, we maintain competitive pricing policies to ensure medicines and medical supplies remain accessible and affordable."
     },
     "reliability": {
-      "title": "Reliability",
-      "desc": "Operating continuously for over 25 years since 2000, serving citizens through 6 branch pharmacies."
-    },
-    "responsibility": {
-      "title": "Responsibility",
-      "desc": "Strictly adhering to healthcare sector standards and conducting responsible operations."
-    },
-    "innovation": {
-      "title": "Innovation",
-      "desc": "Implementing modern technology and innovative solutions to continuously improve our services."
+      "title": "Fast & Reliable Service",
+      "desc": "We ensure prompt and reliable delivery of medicines and medical supplies, maintaining consistent quality standards and trustworthy service."
     }
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Shared success — shared strength"
   },
   "ctaBanner": {
     "title": "Partner with Us",
@@ -117,8 +72,8 @@
   "footer": {
     "companyName": "Ankhnii Nakhia",
     "companySubtitle": "PHARMA LLC",
-    "companyDesc": "Operating in pharmaceuticals and foreign trade since 2007, serving citizens with quality medicines across 6 branch pharmacies.",
-    "quickLinksTitle": "Quick Links",
+    "companyDesc": "Importing, supplying and selling pharmaceuticals and medical equipment since 2007.",
+    "quickLinksTitle": "Links",
     "quickLinks": {
       "home": "Home",
       "about": "About Us",
@@ -130,14 +85,13 @@
     "serviceLinks": {
       "pharmacyNetwork": "Pharmacy Network",
       "supply": "Pharmaceutical Supply",
-      "import": "Medicine Import",
-      "equipment": "Medical Equipment",
-      "quality": "Quality Standards"
+      "import": "Medicine Import"
     },
     "contactTitle": "Contact",
-    "address": "Ulaanbaatar, Sukhbaatar District",
-    "phone": "+976 7011-1234",
-    "email": "info@ankhniinakhia.mn",
+    "address": "Khan-Uul District, 3rd khoroo, Gerelt Urguu Complex 47a-2",
+    "phone": "+976 98009898",
+    "phone2": "+976 80010366",
+    "email": "anhnii.nahia@gmail.com",
     "copyright": "© 2007–2026 Ankhnii Nakhia LLC. All rights reserved."
   },
   "contact": {
@@ -145,19 +99,31 @@
     "subtitle": "Contact us for detailed product information or to place an order.",
     "address": {
       "label": "Address",
-      "value": "Ulaanbaatar, Sukhbaatar District, Baga Toiruu"
+      "value": "Khan-Uul District, 3rd khoroo, Gerelt Urguu Complex 47a-2"
     },
     "phone": {
       "label": "Phone",
-      "value": "+976 7011-1234"
+      "value": "+976 98009898"
+    },
+    "phone2": {
+      "label": "Phone 2",
+      "value": "+976 80010366"
     },
     "email": {
       "label": "Email",
-      "value": "info@ankhniinakhia.mn"
+      "value": "anhnii.nahia@gmail.com"
     },
     "hours": {
       "label": "Business Hours",
-      "value": "Monday - Friday: 09:00 - 18:00"
+      "value": "Monday - Friday: 09:00 - 18:00",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "closed": "Closed"
     },
     "form": {
       "nameLabel": "Name",
@@ -183,87 +149,128 @@
     }
   },
   "about": {
+    "aboutUs": "About Us",
+    "imagePlaceholder": "Image coming soon",
     "badge": "About Us",
     "heroTitle": "Mongolia's trusted",
     "heroHighlight": "healthcare partner",
-    "heroDescription": "Ankhnii Nakhia LLC was established in 2007 in pharmaceuticals, foreign trade, and agriculture, and today operates with 6 branch pharmacies and a pharmaceutical supply unit.",
+    "heroDescription": "Ankhnii Nakhia LLC was established in 2007 in pharmaceutical importing, supply, and sales. Today we operate a Pharmaceutical Distribution Center, 6 branch pharmacies, and Az Children's Hospital with over 40 employees, serving continuously for 17 years.",
+    "ceoMessage": {
+      "title": "CEO's Message",
+      "name": "Kh. Sarnai",
+      "position": "CEO of Ankhnii Nakhia LLC",
+      "p1": "On behalf of the entire team at Ankhnii Nakhia LLC, which has been delivering pharmaceutical care services continuously for 17 years while prioritizing the health of our people, I would like to express my sincere gratitude to all our valued customers and partners.",
+      "p2": "Since our establishment, we have been committed to providing quality, safe, and accessible medicines, medical products, and services to our citizens. Together with our skilled, experienced team and trusted partner organizations, we continue to contribute to the development of the healthcare sector while upholding quality standards.",
+      "p3": "Going forward, we will continue to expand our pharmaceutical supply, pharmacy, and healthcare service activities, working tirelessly to deliver even more reliable and quality services to our customers and partner organizations.",
+      "p4": "In this era of rapid innovation, information technology, and digital transformation, we are confident that by embracing new opportunities, we will continue to grow together and make a tangible contribution to the development of the sector.",
+      "p5": "Your trust and support are the most important factors in our growth and progress. We express our deep gratitude to all partner organizations, clients, and customers who place their trust in our company."
+    },
     "mission": {
       "title": "Mission",
-      "description": "To provide safe, quality-assured medicines and medical supplies to healthcare organizations and the public continuously and equitably, delivering pharmaceutical care services."
+      "description": "Our mission is to provide safe, quality-assured medicines and medical supplies to healthcare organizations and the public continuously and equitably, delivering pharmaceutical care services."
     },
     "vision": {
       "title": "Vision",
-      "description": "To supply quality medicines and medical equipment from highly developed countries including Austria, Germany, Poland, USA, Australia, and South Korea."
+      "description": "Our vision is to become Mongolia's leading trusted partner in the healthcare sector, introducing the best practices, new technologies, and innovations from the global pharmaceutical industry to deliver accessible, quality services to citizens."
+    },
+    "valuesSection": {
+      "title": "Values",
+      "description": "We prioritize quality in our operations, value the trust of our partners and customers, approach healthcare responsibly, embrace innovation and new technologies, and strive for continuous and reliable operations."
+    },
+    "socialResponsibility": {
+      "title": "Social Responsibility",
+      "p1": "We always prioritize learning and development. Our team actively participates in conferences, seminars, training sessions, and stays updated with the latest industry news, sharing knowledge and experience with others.",
+      "p2": "We work closely with local communities, listening to their needs, opinions, and feedback.",
+      "p3": "We also actively participate in district and community parades, community events, and sponsorship activities, representing our company and building strong relationships with citizens."
     },
     "stats": {
       "founded": { "value": "2007", "label": "Founded" },
-      "experience": { "value": "25+", "label": "Years of Experience" },
+      "experience": { "value": "17+", "label": "Years of Experience" },
       "branches": { "value": "6", "label": "Branch Pharmacies" },
-      "staff": { "value": "30+", "label": "Total Staff" },
-      "medicines": { "value": "10+", "label": "Medicine Types" },
-      "units": { "value": "4", "label": "Branch Units" }
+      "staff": { "value": "40+", "label": "Total Staff" },
+      "medicines": { "value": "10+", "label": "Medicine Types" }
     },
     "history": {
       "badge": "History",
-      "title": "Our Story",
-      "p1": "Ankhnii Nakhia LLC was established in 2007 as a sole proprietorship in pharmaceuticals, foreign trade, and agriculture. Founding director Kh. Sarnai is a qualified pharmacist with over 20 years of professional experience.",
-      "p2": "Under a special license from the Capital City Health Department, \"Ankhnii Nakhia\" pharmacy opened in November 2009 and has since expanded to 6 branch pharmacies with over 30 employees. Serving at Health Insurance discounted prices, we provide safe, quality medicines to family clinics and citizens.",
-      "p3": "Since 2017, operating under a special license for pharmaceutical and medical equipment supply in Khan-Uul District, importing over 10 types of medicines from reputable manufacturers in Russia and Vietnam."
+      "title": "Company Introduction",
+      "p1": "Ankhnii Nakhia LLC was first established in 2007 in the pharmacy sector. From April 7, 2017, we obtained a special license for supplying medicines, medical instruments, equipment, and accessories, successfully expanding our operations across Mongolia with quality-assured, safe medicines and medical supplies.",
+      "p2": "Today, the company operates a pharmaceutical distribution center, 6 branch pharmacies, and a children's hospital, with over 40 employees, successfully operating for 17 years.",
+      "p3": "The company's founder and CEO, Kh. Sarnai, is a qualified pharmacist with over 20 years of professional experience. Under her leadership, the team consistently upholds quality and reliability through their highly skilled and experienced professionals.",
+      "p4": "Going forward, Ankhnii Nakhia LLC aims to introduce world-class pharmaceutical best practices, new technologies, and innovations across all its branches, delivering quality and accessible medicines and medical services to the public."
     },
     "highlights": {
-      "standard": {
-        "title": "MNS5260:2015 Standard",
-        "desc": "Operating in compliance with the pharmacy structure and operations standard."
-      },
-      "sixBranches": {
-        "title": "6 Branch Pharmacies",
-        "desc": "Including Azyn Nakhia-1, Azyn Nakhia-2, Shine Nakhia, and Az Children's Hospital branches."
-      },
-      "team": {
-        "title": "Professional Team",
-        "desc": "Over 30 professionals and staff including pharmacists and dispensers."
-      },
-      "insurance": {
-        "title": "Insurance Discount",
-        "desc": "Serving citizens at Health Insurance discounted prices."
-      }
+      "standard": { "title": "MNS5260:2015 Standard", "desc": "Operating in compliance with the pharmacy structure and operations standard." },
+      "sixBranches": { "title": "6 Branch Pharmacies", "desc": "Including Azyn Nakhia-1, Azyn Nakhia-2, Shine Nakhia, and Az Children's Hospital branches." },
+      "team": { "title": "Professional Team", "desc": "Over 30 professionals and staff including pharmacists and dispensers." },
+      "insurance": { "title": "Insurance Discount", "desc": "Serving citizens at Health Insurance discounted prices." }
     },
     "timeline": {
-      "badge": "Growth Path",
-      "title": "Our Growth Journey",
-      "y2000": "Operations began, taking the first steps in the healthcare sector.",
-      "y2007": "Ankhnii Nakhia LLC was established in pharmaceuticals, foreign trade, and agriculture.",
-      "y2009": "\"Ankhnii Nakhia\" pharmacy opened with a special license from the Capital City Health Department.",
-      "y2017": "Received special license for pharmaceutical and medical equipment supply.",
-      "y2020": "Expanded to 6 branch pharmacies with over 30 employees.",
-      "y2024": "Importing 10+ types of medicines from Russia and Vietnam, with plans to expand to Europe and the USA."
+      "badge": "Achievements",
+      "title": "Our Achievements",
+      "y2009": "Selenge Province Trusted Consumer Partner Organization",
+      "y2013": "Selenge Province Best Pharmacy",
+      "y2015": "Selenge Province Best Pharmacy",
+      "y2017": "Sukhbaatar District Featured Pharmacy",
+      "y2021": "Selenge Province Best Pharmacy",
+      "y2023": "Sukhbaatar District Best Taxpayer"
     },
     "values": {
       "badge": "Values",
       "title": "Our Values",
       "subtitle": "We uphold the following values as the core principles of our operations.",
-      "quality": {
-        "title": "Quality",
-        "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements."
-      },
-      "reliability": {
-        "title": "Reliability",
-        "desc": "Operating continuously for over 25 years since 2000, serving citizens through 6 branch pharmacies."
-      },
-      "responsibility": {
-        "title": "Responsibility",
-        "desc": "Fully implementing laws and regulations in our operations, working responsibly."
-      },
-      "accessibility": {
-        "title": "Accessibility",
-        "desc": "Serving at Health Insurance discounted prices and promoting rational medicine use."
-      }
+      "quality": { "title": "Quality", "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements." },
+      "reliability": { "title": "Reliability", "desc": "Operating continuously for over 25 years since 2000, serving citizens through 6 branch pharmacies." },
+      "responsibility": { "title": "Responsibility", "desc": "Fully implementing laws and regulations in our operations, working responsibly." },
+      "accessibility": { "title": "Accessibility", "desc": "Serving at Health Insurance discounted prices and promoting rational medicine use." }
     },
     "cta": {
       "title": "Partner with Us",
       "description": "Contact us if you would like to place an order for medicines and medical supplies or learn about partnership opportunities.",
       "button": "Contact Us"
     }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Operating pharmacy networks, pharmaceutical supply, and children's hospital services with quality.",
+    "distributionCenter": {
+      "title": "Pharmaceutical Distribution Center",
+      "desc": "Since April 7, 2017, Ankhnii Nakhia LLC has been operating under a special license to supply medicines, medical instruments, equipment, and accessories in Khan-Uul District with 10 employees."
+    },
+    "pharmacy": {
+      "title": "Pharmacy",
+      "desc": "Starting from 2007, our pharmacy has expanded to 6 branches with over 20 staff, providing Health Insurance discounted services to family clinics and citizens, contributing to public health."
+    },
+    "childrenHospital": {
+      "title": "Children's Hospital",
+      "desc": "Az Children's Hospital is a branch unit focused on delivering quality healthcare services for children."
+    },
+    "pharmacyNetwork": {
+      "title": "Pharmacy Network",
+      "desc": "Since 2009, serving family clinics and citizens with safe, quality medicines at Health Insurance discounted prices across 6 branch pharmacies."
+    },
+    "supplyService": {
+      "title": "Pharmaceutical Supply",
+      "desc": "Since 2017, supplying medicines, medical instruments, equipment, and accessories under special license."
+    },
+    "import": {
+      "title": "Medicine Import",
+      "desc": "Importing over 10 types of medicines registered in Mongolia's pharmaceutical registry from reputable manufacturers in Russia and Vietnam."
+    },
+    "quality": {
+      "title": "Quality Standards",
+      "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements."
+    },
+    "learnMore": "Learn More"
+  },
+  "products": {
+    "title": "Branch Network",
+    "subtitle": "Serving citizens through 6 branch pharmacies and a pharmaceutical supply unit",
+    "ankhnyNakhia": { "name": "Ankhnii Nakhia Pharmacy", "desc": "Main pharmacy, operating since 2009" },
+    "azynNakhia1": { "name": "Azyn Nakhia-1", "desc": "Branch unit" },
+    "azynNakhia2": { "name": "Azyn Nakhia-2", "desc": "Branch unit" },
+    "shineNakhia": { "name": "Shine Nakhia", "desc": "Branch unit" },
+    "azKids": { "name": "Az Children's Hospital", "desc": "Children's hospital branch" },
+    "supply": { "name": "Pharmaceutical Supply Unit", "desc": "Khan-Uul district, operating since 2017" }
   },
   "hr": {
     "badge": "Careers",
@@ -274,27 +281,12 @@
     "policy": {
       "badge": "Policy",
       "title": "HR Policy",
-      "subtitle": "We develop our employees and create a favorable environment to maximize their capabilities. Through professional training and skills programs, we support the growth and development of each employee, contributing to the organization's sustainable development.",
-      "rightFit": {
-        "title": "Right Job Placement",
-        "desc": "Placing each employee in a position that matches their skills, interests, and talents, creating conditions for productive and highly effective work."
-      },
-      "fairEvaluation": {
-        "title": "Fair Evaluation",
-        "desc": "Clearly distributing responsibilities and implementing an objective, fair evaluation system."
-      },
-      "resultBasedReward": {
-        "title": "Results-Based Incentives",
-        "desc": "Genuinely valuing the worth of labor and creating conditions for long-term, stable, and active work."
-      },
-      "continuousGrowth": {
-        "title": "Continuous Development",
-        "desc": "Implementing training programs to systematically improve professional and general skills."
-      },
-      "teamCulture": {
-        "title": "Positive Team Culture",
-        "desc": "Creating an organizational culture that values respect, understanding, and a creative atmosphere."
-      }
+      "subtitle": "We develop our employees and create a favorable environment to maximize their capabilities.",
+      "rightFit": { "title": "Right Job Placement", "desc": "Placing each employee in a position that matches their skills, interests, and talents." },
+      "fairEvaluation": { "title": "Fair Evaluation", "desc": "Clearly distributing responsibilities and implementing an objective, fair evaluation system." },
+      "resultBasedReward": { "title": "Results-Based Incentives", "desc": "Genuinely valuing the worth of labor and creating conditions for long-term, stable work." },
+      "continuousGrowth": { "title": "Continuous Development", "desc": "Implementing training programs to systematically improve professional and general skills." },
+      "teamCulture": { "title": "Positive Team Culture", "desc": "Creating an organizational culture that values respect, understanding, and creativity." }
     },
     "whyUs": {
       "badge": "Advantages",
@@ -311,30 +303,12 @@
       "badge": "Stages",
       "title": "Recruitment Process",
       "subtitle": "Our hiring process is based on transparent and fair principles.",
-      "jobPosting": {
-        "title": "Job Posting",
-        "desc": "Publishing job vacancy announcements seeking qualified professionals."
-      },
-      "applicationReceive": {
-        "title": "Application Receipt",
-        "desc": "Receiving candidate applications confidentially."
-      },
-      "screening": {
-        "title": "Application Screening",
-        "desc": "Checking whether candidates meet the set requirements."
-      },
-      "initialInterview": {
-        "title": "Initial Interview",
-        "desc": "Conducting interviews to assess skills and fit."
-      },
-      "followUpInterview": {
-        "title": "Follow-up Interview",
-        "desc": "Meeting with management for detailed position assessment."
-      },
-      "hiring": {
-        "title": "Hiring",
-        "desc": "Signing the contract and starting the team onboarding process."
-      }
+      "jobPosting": { "title": "Job Posting", "desc": "Publishing job vacancy announcements seeking qualified professionals." },
+      "applicationReceive": { "title": "Application Receipt", "desc": "Receiving candidate applications confidentially." },
+      "screening": { "title": "Application Screening", "desc": "Checking whether candidates meet the set requirements." },
+      "initialInterview": { "title": "Initial Interview", "desc": "Conducting interviews to assess skills and fit." },
+      "followUpInterview": { "title": "Follow-up Interview", "desc": "Meeting with management for detailed position assessment." },
+      "hiring": { "title": "Hiring", "desc": "Signing the contract and starting the team onboarding process." }
     },
     "cta": {
       "title": "Ready to join us?",

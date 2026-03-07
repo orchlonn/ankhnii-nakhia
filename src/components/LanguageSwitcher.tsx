@@ -1,14 +1,23 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Globe } from "lucide-react";
+
+const flags: Record<string, { src: string; alt: string }> = {
+  mn: {
+    src: "https://flagcdn.com/w40/mn.png",
+    alt: "Монгол",
+  },
+  en: {
+    src: "https://flagcdn.com/w40/gb.png",
+    alt: "English",
+  },
+};
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const t = useTranslations("languageSwitcher");
 
   function switchLocale() {
     const newLocale = locale === "mn" ? "en" : "mn";
@@ -16,15 +25,22 @@ export default function LanguageSwitcher() {
   }
 
   const otherLocale = locale === "mn" ? "en" : "mn";
+  const flag = flags[otherLocale];
 
   return (
     <button
       onClick={switchLocale}
-      className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-[#455A6F] hover:text-[#00AC94] rounded-lg hover:bg-gray-50 transition-all"
-      aria-label={`Switch to ${t(otherLocale)}`}
+      className="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-[#00AC94]/5 transition-all"
+      aria-label={`Switch to ${flag.alt}`}
     >
-      <Globe className="w-4 h-4" />
-      {t(otherLocale)}
+      <img
+        src={flag.src}
+        alt={flag.alt}
+        className="w-6 h-4 object-cover rounded-sm"
+      />
+      <span className="text-sm font-medium text-[#5a5a72]">
+        {otherLocale.toUpperCase()}
+      </span>
     </button>
   );
 }

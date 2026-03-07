@@ -19,7 +19,9 @@ export default function Contact() {
       icon: Phone,
       label: t("phone.label"),
       value: t("phone.value"),
+      value2: t("phone2.value"),
       href: "tel:+97670111234",
+      href2: "tel:+97680010366",
     },
     {
       icon: Mail,
@@ -27,12 +29,16 @@ export default function Contact() {
       value: t("email.value"),
       href: "mailto:info@ankhniinakhia.mn",
     },
-    {
-      icon: Clock,
-      label: t("hours.label"),
-      value: t("hours.value"),
-      href: undefined,
-    },
+  ];
+
+  const workHours = [
+    { day: t("hours.monday"), time: "09:00 - 18:00" },
+    { day: t("hours.tuesday"), time: "09:00 - 18:00" },
+    { day: t("hours.wednesday"), time: "09:00 - 18:00" },
+    { day: t("hours.thursday"), time: "09:00 - 18:00" },
+    { day: t("hours.friday"), time: "09:00 - 18:00" },
+    { day: t("hours.saturday"), time: t("hours.closed") },
+    { day: t("hours.sunday"), time: t("hours.closed") },
   ];
 
   function handleSubmit(e: FormEvent) {
@@ -45,39 +51,60 @@ export default function Contact() {
       <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
-          <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342] mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342]">
             {t("title")}
           </h2>
-          <p className="text-sm sm:text-base text-[#455A6F]">
-            {t("subtitle")}
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-3 sm:space-y-4">
-            {contactInfo.map((item) => {
-              const content = (
-                <div className="flex items-start gap-3.5 p-4 rounded-xl bg-[#F9FAFB] border border-gray-100 hover:border-[#00AC94]/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
-                    <item.icon className="w-4.5 h-4.5 text-[#00AC94]" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-[#455A6F]/60 font-medium mb-0.5">
-                      {item.label}
-                    </p>
-                    <p className="text-sm text-[#243342] font-medium">{item.value}</p>
-                  </div>
+            {contactInfo.map((item) => (
+              <div key={item.label} className="flex items-start gap-3.5 p-4 rounded-xl bg-[#F9FAFB] border border-gray-100 hover:border-[#00AC94]/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
+                  <item.icon className="w-4.5 h-4.5 text-[#00AC94]" />
                 </div>
-              );
-              return item.href ? (
-                <a key={item.label} href={item.href} className="block">
-                  {content}
-                </a>
-              ) : (
-                <div key={item.label}>{content}</div>
-              );
-            })}
+                <div>
+                  <p className="text-xs text-[#455A6F]/60 font-medium mb-0.5">
+                    {item.label}
+                  </p>
+                  {item.href ? (
+                    <a href={item.href} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-[#243342] font-medium">{item.value}</p>
+                  )}
+                  {"value2" in item && item.value2 && (
+                    <a href={(item as { href2?: string }).href2} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
+                      {item.value2}
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+
+            {/* Work Hours */}
+            <div className="p-5 rounded-xl bg-[#F9FAFB] border border-gray-100">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
+                  <Clock className="w-4.5 h-4.5 text-[#00AC94]" />
+                </div>
+                <p className="text-sm font-semibold text-[#243342]">{t("hours.label")}</p>
+              </div>
+              <div className="space-y-0.5">
+                {workHours.slice(0, 5).map((item) => (
+                  <div key={item.day} className="flex items-center justify-between text-sm leading-tight">
+                    <span className="text-[#243342] font-medium">{item.day}</span>
+                    <span className="text-[#455A6F]">{item.time}</span>
+                  </div>
+                ))}
+                <div className="flex items-center justify-between text-sm leading-tight">
+                  <span className="text-[#243342] font-medium">{t("hours.saturday")}, {t("hours.sunday")}</span>
+                  <span className="text-[#455A6F]">{t("hours.closed")}</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
@@ -182,6 +209,20 @@ export default function Contact() {
               )}
             </div>
           </div>
+        </div>
+
+        {/* Google Maps */}
+        <div className="mt-10 sm:mt-14 rounded-2xl overflow-hidden border border-gray-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.5!2d106.9!3d47.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDU0JzAwLjAiTiAxMDbCsDU0JzAwLjAiRQ!5e0!3m2!1sen!2smn!4v1"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Анхны Нахиа ХХК байршил"
+          />
         </div>
       </div>
     </section>

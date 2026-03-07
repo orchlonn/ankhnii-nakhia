@@ -1,18 +1,18 @@
 import Header from "@/components/Header";
 import PageBanner from "@/components/PageBanner";
-import Products from "@/components/Products";
+import Partners from "@/components/Partners";
 import Footer from "@/components/Footer";
 import { getTranslations } from "next-intl/server";
 
-export default async function ProductsPage() {
-  const t = await getTranslations("products");
+export default async function PartnersPage() {
+  const t = await getTranslations("partners");
 
   return (
     <>
       <Header />
       <main>
         <PageBanner title={t("title")} />
-        <Products />
+        <Partners />
       </main>
       <Footer />
     </>

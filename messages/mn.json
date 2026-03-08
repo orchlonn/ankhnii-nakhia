@@ -35,7 +35,7 @@
   },
   "stats": {
     "founded": { "value": "2007", "label": "Байгуулагдсан он" },
-    "experience": { "value": "17+", "label": "Жилийн туршлага" },
+    "experience": { "value": "19+", "label": "Жилийн туршлага" },
     "branches": { "value": "6", "label": "Салбар эмийн сан" },
     "staff": { "value": "40+", "label": "Нийт ажилтан" },
     "medicines": { "value": "10+", "label": "Эмийн төрөл" }
@@ -186,7 +186,7 @@
     },
     "stats": {
       "founded": { "value": "2007", "label": "Байгуулагдсан он" },
-      "experience": { "value": "17+", "label": "Жилийн туршлага" },
+      "experience": { "value": "19+", "label": "Жилийн туршлага" },
       "branches": { "value": "6", "label": "Салбар эмийн сан" },
       "staff": { "value": "40+", "label": "Нийт ажилтан" },
       "medicines": { "value": "10+", "label": "Эмийн төрөл" }

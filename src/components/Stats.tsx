@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { StaggerContainer, StaggerItem, AnimatedCounter } from "./motion";
 
 export default async function Stats() {
   const t = await getTranslations("stats");
@@ -14,18 +15,18 @@ export default async function Stats() {
   return (
     <section className="py-16 sm:py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 sm:gap-8">
+        <StaggerContainer className="grid grid-cols-3 sm:grid-cols-5 gap-6 sm:gap-8" staggerDelay={0.15}>
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
+            <StaggerItem key={stat.label} className="text-center">
               <div className="text-3xl sm:text-4xl font-bold text-[#00AC94]">
-                {stat.value}
+                <AnimatedCounter value={stat.value} />
               </div>
               <div className="text-sm font-medium text-[#5a5a72] mt-1">
                 {stat.label}
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

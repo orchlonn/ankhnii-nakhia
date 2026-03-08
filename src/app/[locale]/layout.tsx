@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Roboto } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -16,10 +16,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const roboto = Roboto({
+  variable: "--font-roboto",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "700"],
+});
+
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin", "cyrillic"],
-  weight: ["700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export function generateStaticParams() {
@@ -67,7 +73,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${roboto.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           {children}

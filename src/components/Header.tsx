@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { Menu, X, Pill, ChevronDown } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -17,7 +18,7 @@ interface NavItem {
   dropdown?: DropdownItem[];
 }
 
-function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }) {
+function DesktopDropdown({ item, pathname, scrolled }: { item: NavItem; pathname: string; scrolled: boolean }) {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -35,10 +36,10 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
   return (
     <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
-        className={`flex items-center gap-1 px-4 py-2 text-[14px] font-medium rounded-lg transition-all whitespace-nowrap ${
+        className={`flex items-center gap-1 px-4 py-2 text-[17px] font-medium rounded-lg transition-all whitespace-nowrap ${
           isActive
             ? "text-[#00AC94] bg-[#00AC94]/5"
-            : "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50"
+            : scrolled ? "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50" : "text-white/90 hover:text-white hover:bg-white/10"
         }`}
       >
         {item.label}
@@ -73,8 +74,16 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const t = useTranslations("header");
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const aboutDropdown: DropdownItem[] = [
     { label: t("nav.aboutDropdown.ceoMessage"), href: "/about/ceo-message" },
@@ -98,37 +107,27 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b border-gray-100/80">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/98 backdrop-blur-sm border-b border-gray-100/80 shadow-sm" : "bg-transparent border-b border-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-[#00AC94] flex items-center justify-center group-hover:scale-105 transition-transform">
-              <Pill className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span className="text-lg font-bold text-[#1a1a2e] tracking-tight font-[var(--font-playfair)]">
-                {t("companyName")}
-              </span>
-              <span className="block text-[10px] text-[#00AC94] font-semibold -mt-0.5 tracking-widest uppercase">
-                {t("companySubtitle")}
-              </span>
-            </div>
+            <Image src="/Company Logo.png" alt="Анхны Нахиа" width={200} height={200} className="group-hover:scale-105 transition-transform" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
             {navItems.map((item) =>
               item.dropdown ? (
-                <DesktopDropdown key={item.href} item={item} pathname={pathname} />
+                <DesktopDropdown key={item.href} item={item} pathname={pathname} scrolled={scrolled} />
               ) : (
                 <Link
                   key={item.href}
                   href={item.href as "/contact"}
-                  className={`px-4 py-2 text-[14px] font-medium rounded-lg transition-all whitespace-nowrap ${
+                  className={`px-4 py-2 text-[17px] font-medium rounded-lg transition-all whitespace-nowrap ${
                     pathname === item.href
                       ? "text-[#00AC94] bg-[#00AC94]/5"
-                      : "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50"
+                      : scrolled ? "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50" : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -139,7 +138,7 @@ export default function Header() {
 
           {/* Desktop Language Switcher */}
           <div className="hidden lg:flex items-center">
-            <LanguageSwitcher />
+            <LanguageSwitcher scrolled={scrolled} />
           </div>
 
           {/* Mobile Toggle */}
@@ -149,9 +148,9 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
-              <X className="w-6 h-6 text-[#1a1a2e]" />
+              <X className={`w-6 h-6 ${scrolled ? "text-[#1a1a2e]" : "text-white"}`} />
             ) : (
-              <Menu className="w-6 h-6 text-[#1a1a2e]" />
+              <Menu className={`w-6 h-6 ${scrolled ? "text-[#1a1a2e]" : "text-white"}`} />
             )}
           </button>
         </div>

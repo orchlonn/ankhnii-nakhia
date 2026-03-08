@@ -3,6 +3,7 @@
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import { FadeInUp, FadeInLeft, FadeInRight, StaggerContainer, StaggerItem } from "./motion";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -50,65 +51,73 @@ export default function Contact() {
     <section id="contact" className="py-12 sm:py-20 bg-white">
       <div className="max-w-[1088px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
-          <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342]">
-            {t("title")}
-          </h2>
-        </div>
+        <FadeInUp>
+          <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
+            <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#243342]">
+              {t("title")}
+            </h2>
+          </div>
+        </FadeInUp>
 
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-3 sm:space-y-4">
-            {contactInfo.map((item) => (
-              <div key={item.label} className="flex items-start gap-3.5 p-4 rounded-xl bg-[#F9FAFB] border border-gray-100 hover:border-[#00AC94]/30 transition-all">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
-                  <item.icon className="w-4.5 h-4.5 text-[#00AC94]" />
-                </div>
-                <div>
-                  <p className="text-xs text-[#455A6F]/60 font-medium mb-0.5">
-                    {item.label}
-                  </p>
-                  {item.href ? (
-                    <a href={item.href} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-sm text-[#243342] font-medium">{item.value}</p>
-                  )}
-                  {"value2" in item && item.value2 && (
-                    <a href={(item as { href2?: string }).href2} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
-                      {item.value2}
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-
-            {/* Work Hours */}
-            <div className="p-5 rounded-xl bg-[#F9FAFB] border border-gray-100">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
-                  <Clock className="w-4.5 h-4.5 text-[#00AC94]" />
-                </div>
-                <p className="text-sm font-semibold text-[#243342]">{t("hours.label")}</p>
-              </div>
-              <div className="space-y-0.5">
-                {workHours.slice(0, 5).map((item) => (
-                  <div key={item.day} className="flex items-center justify-between text-sm leading-tight">
-                    <span className="text-[#243342] font-medium">{item.day}</span>
-                    <span className="text-[#455A6F]">{item.time}</span>
+          <FadeInLeft className="lg:col-span-2">
+            <StaggerContainer className="space-y-3 sm:space-y-4" staggerDelay={0.1}>
+              {contactInfo.map((item) => (
+                <StaggerItem key={item.label}>
+                  <div className="flex items-start gap-3.5 p-4 rounded-xl bg-[#F9FAFB] border border-gray-100 hover:border-[#00AC94]/30 hover:shadow-md transition-all duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
+                      <item.icon className="w-4.5 h-4.5 text-[#00AC94]" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-[#455A6F]/60 font-medium mb-0.5">
+                        {item.label}
+                      </p>
+                      {item.href ? (
+                        <a href={item.href} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-sm text-[#243342] font-medium">{item.value}</p>
+                      )}
+                      {"value2" in item && item.value2 && (
+                        <a href={(item as { href2?: string }).href2} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
+                          {item.value2}
+                        </a>
+                      )}
+                    </div>
                   </div>
-                ))}
-                <div className="flex items-center justify-between text-sm leading-tight">
-                  <span className="text-[#243342] font-medium">{t("hours.saturday")}, {t("hours.sunday")}</span>
-                  <span className="text-[#455A6F]">{t("hours.closed")}</span>
+                </StaggerItem>
+              ))}
+
+              {/* Work Hours */}
+              <StaggerItem>
+                <div className="p-5 rounded-xl bg-[#F9FAFB] border border-gray-100 hover:border-[#00AC94]/30 hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
+                      <Clock className="w-4.5 h-4.5 text-[#00AC94]" />
+                    </div>
+                    <p className="text-sm font-semibold text-[#243342]">{t("hours.label")}</p>
+                  </div>
+                  <div className="space-y-0.5">
+                    {workHours.slice(0, 5).map((item) => (
+                      <div key={item.day} className="flex items-center justify-between text-sm leading-tight">
+                        <span className="text-[#243342] font-medium">{item.day}</span>
+                        <span className="text-[#455A6F]">{item.time}</span>
+                      </div>
+                    ))}
+                    <div className="flex items-center justify-between text-sm leading-tight">
+                      <span className="text-[#243342] font-medium">{t("hours.saturday")}, {t("hours.sunday")}</span>
+                      <span className="text-[#455A6F]">{t("hours.closed")}</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </StaggerItem>
+            </StaggerContainer>
+          </FadeInLeft>
 
           {/* Contact Form */}
-          <div className="lg:col-span-3">
+          <FadeInRight className="lg:col-span-3">
             <div className="bg-[#F9FAFB] rounded-2xl border border-gray-100 p-5 sm:p-7">
               {submitted ? (
                 <div className="text-center py-14">
@@ -200,7 +209,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#00AC94] hover:bg-[#009882] text-white text-sm font-medium rounded-xl transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[#00AC94] hover:bg-[#009882] hover:scale-[1.02] text-white text-sm font-medium rounded-xl transition-all duration-300"
                   >
                     <Send className="w-4 h-4" />
                     {t("form.submitButton")}
@@ -208,22 +217,24 @@ export default function Contact() {
                 </form>
               )}
             </div>
-          </div>
+          </FadeInRight>
         </div>
 
         {/* Google Maps */}
-        <div className="mt-10 sm:mt-14 rounded-2xl overflow-hidden border border-gray-100">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.5!2d106.9!3d47.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDU0JzAwLjAiTiAxMDbCsDU0JzAwLjAiRQ!5e0!3m2!1sen!2smn!4v1"
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Анхны Нахиа ХХК байршил"
-          />
-        </div>
+        <FadeInUp delay={0.3}>
+          <div className="mt-10 sm:mt-14 rounded-2xl overflow-hidden border border-gray-100">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2341.8697246867496!2d106.88180416892887!3d47.90236452439272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d96933500a1bf57%3A0xd2ded91321348072!2z0LPRjdGA0Y3Qu9GCINOp0YDQs9Op06kg0YXQvtGC0YXQvtC9!5e1!3m2!1sen!2sus!4v1773011256927!5m2!1sen!2sus"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Анхны Нахиа ХХК байршил"
+            />
+          </div>
+        </FadeInUp>
       </div>
     </section>
   );

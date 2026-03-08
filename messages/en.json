@@ -35,7 +35,7 @@
   },
   "stats": {
     "founded": { "value": "2007", "label": "Founded" },
-    "experience": { "value": "17+", "label": "Years of Experience" },
+    "experience": { "value": "19+", "label": "Years of Experience" },
     "branches": { "value": "6", "label": "Branch Pharmacies" },
     "staff": { "value": "40+", "label": "Total Staff" },
     "medicines": { "value": "10+", "label": "Medicine Types" }
@@ -180,12 +180,13 @@
     "socialResponsibility": {
       "title": "Social Responsibility",
       "p1": "We always prioritize learning and development. Our team actively participates in conferences, seminars, training sessions, and stays updated with the latest industry news, sharing knowledge and experience with others.",
+      "p1b": "Our social responsibility policy is focused not only on advancing our own knowledge, but also on preparing a new generation of professionals who will contribute to the future development of the industry. In this way, we strengthen our values and responsibility not only through our operations, but also through the positive impact we have on society.",
       "p2": "We work closely with local communities, listening to their needs, opinions, and feedback.",
       "p3": "We also actively participate in district and community parades, community events, and sponsorship activities, representing our company and building strong relationships with citizens."
     },
     "stats": {
       "founded": { "value": "2007", "label": "Founded" },
-      "experience": { "value": "17+", "label": "Years of Experience" },
+      "experience": { "value": "19+", "label": "Years of Experience" },
       "branches": { "value": "6", "label": "Branch Pharmacies" },
       "staff": { "value": "40+", "label": "Total Staff" },
       "medicines": { "value": "10+", "label": "Medicine Types" }

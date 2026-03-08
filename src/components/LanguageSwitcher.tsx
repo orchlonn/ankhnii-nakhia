@@ -14,7 +14,7 @@ const flags: Record<string, { src: string; alt: string }> = {
   },
 };
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ scrolled = true }: { scrolled?: boolean }) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -30,7 +30,9 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={switchLocale}
-      className="flex items-center gap-1.5 px-3 py-2 rounded-full hover:bg-[#00AC94]/5 transition-all"
+      className={`flex items-center gap-1.5 px-4 py-2 rounded-lg cursor-pointer transition-all ${
+        scrolled ? "hover:text-[#1a1a2e] hover:bg-gray-50" : "hover:text-white hover:bg-white/10"
+      }`}
       aria-label={`Switch to ${flag.alt}`}
     >
       <img
@@ -38,7 +40,7 @@ export default function LanguageSwitcher() {
         alt={flag.alt}
         className="w-6 h-4 object-cover rounded-sm"
       />
-      <span className="text-sm font-medium text-[#5a5a72]">
+      <span className={`text-[17px] font-medium ${scrolled ? "text-[#5a5a72]" : "text-white/90"}`}>
         {otherLocale.toUpperCase()}
       </span>
     </button>

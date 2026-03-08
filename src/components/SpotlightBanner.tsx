@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 
 const BUBBLE_COUNT = 6;
 
@@ -25,8 +25,11 @@ function generateBubbles(): Bubble[] {
 }
 
 export default function SpotlightBanner({ children }: { children: ReactNode }) {
-  const bubblesRef = useRef<Bubble[]>(generateBubbles());
-  const bubbles = bubblesRef.current;
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+
+  useEffect(() => {
+    setBubbles(generateBubbles());
+  }, []);
 
   return (
     <div className="bg-[#1a1a2e] rounded-3xl p-8 sm:p-12 md:p-16 flex flex-col sm:flex-row items-center justify-between gap-8 relative overflow-hidden">

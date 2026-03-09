@@ -42,13 +42,13 @@ export default async function CompanyPage() {
           {/* Company Story */}
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-12 sm:py-20">
             <FadeInUp>
-              <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#00AC94] mb-8 font-roboto">
+              <h2 className="text-2xl sm:text-3xl md:text-[32px] font-semibold text-[#243342] mb-8 font-roboto">
                 {t("aboutUs")}
               </h2>
             </FadeInUp>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14 items-start">
               <FadeInLeft className="lg:col-span-3">
-                <div className="space-y-4 text-base sm:text-lg text-[#1a1a2e] leading-relaxed text-justify">
+                <div className="space-y-4 text-[15px] sm:text-base text-[#1a1a2e] leading-relaxed text-justify">
                   <p>{t("history.p1")}</p>
                   <p>{t("history.p2")}</p>
                   <p>{t("history.p3")}</p>

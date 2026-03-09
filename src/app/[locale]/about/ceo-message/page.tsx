@@ -36,7 +36,7 @@ export default async function CeoMessagePage() {
                   </FadeInLeft>
                   {/* Text content */}
                   <FadeInRight delay={0.4}>
-                    <div className="space-y-4 text-sm sm:text-[15px] text-[#1a1a2e] leading-relaxed text-justify">
+                    <div className="space-y-4 text-[15px] sm:text-base text-[#1a1a2e] leading-relaxed text-justify">
                       <p>{t("ceoMessage.p1")}</p>
                       <p>{t("ceoMessage.p2")}</p>
                       <p>{t("ceoMessage.p3")}</p>

@@ -21,7 +21,7 @@ export default async function Footer() {
           <StaggerItem>
             <div>
               <Link href="/" className="flex items-center gap-3 mb-6">
-                <Image src="/Company Logo.png" alt="Анхны Нахиа" width={200} height={200} className="bg-white rounded-2xl p-2 hover:scale-105 transition-transform duration-300" />
+                <Image src="/Company Logo.png" alt={t("companyName")} width={200} height={200} className="bg-white rounded-2xl p-2 hover:scale-105 transition-transform duration-300" />
               </Link>
               <div className="flex items-center gap-3 mt-6">
                 <a href="#" className="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 hover:scale-110 flex items-center justify-center transition-all duration-300" aria-label="Facebook">

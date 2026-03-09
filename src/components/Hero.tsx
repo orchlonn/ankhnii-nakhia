@@ -30,7 +30,7 @@ export default async function Hero() {
             </FadeInUp>
             <FadeInUp delay={0.2} duration={0.8}>
               <p className="text-lg sm:text-xl text-white/80 mt-4 font-bold italic font-playfair">
-                19+ years of experience
+                {t("experience")}
               </p>
             </FadeInUp>
 

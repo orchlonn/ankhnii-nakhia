@@ -16,15 +16,15 @@ export default async function DistributionPage() {
           <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-14 sm:py-20">
             <FadeInUp>
               <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#1a1a2e] mb-14 text-center font-roboto">
-                &ldquo;Анхны нахиа&rdquo; эм ханган нийлүүлэх төв
+                {t("distributionPage.heading")}
               </h2>
             </FadeInUp>
             <FadeInUp delay={0.2}>
               <div className="space-y-5 text-base sm:text-lg text-[#455A6F] leading-relaxed text-justify">
-                <p>Манай &ldquo;Анхны нахиа&rdquo; ХХК- нь 2017оны 4-р сарын 7-ны өдрөөс эхлэн эм, эмнэлэгийн багаж, тоног төхөөхөмж, дагалдах хэрэгсэл ханган нийлүүлэх тусгай зөвшөөрөлтэйгөөр Хан-Уул дүүргийн нутаг дэвсгэрт үйл ажиллагаа явуулан нийт 10 ажилтантайгаар ажиллаж байна.</p>
-                <p>Өдгөө ОХУ, БНСВУ -ын нэр хүнд бүхий эмийн үйлдвэрүүдээс нийт 10гаруй төрлийн эмийг Монгол Улсын эмийн бүртгэлд бүртгүүлэн импортоор оруулж ирэн худалдаалж байна.</p>
-                <p><strong>Бидний зорилго:</strong> Эм, эмнэлэгийн хэрэгсэл, тоног төхөөрөмж импортлох, ханган нийлүүлэх үйл ажиллагааг чанарын өндөр түвшинд хийж, хууль тогтоомжийг үйл ажиллагаандаа бүрэн хэрэгжүүлэн ажиллах явдал юм.</p>
-                <p><strong>Бидний зорилт:</strong> Цаашдаа Европын холбооны Австри, Герман, Польш, АНУ, Австрали, БНСУ зэрэг өндөр хөгжилтэй улс орнуудаас чанартай эм, эмнэлэгийн багаж тоног төхөөрөмж, дагалдах хэрэгслээр ард иргэддээ ханган ажиллахаар зорин ажиллаж байна.</p>
+                <p>{t("distributionPage.p1")}</p>
+                <p>{t("distributionPage.p2")}</p>
+                <p><strong>{t("distributionPage.goalTitle")}</strong> {t("distributionPage.goalText")}</p>
+                <p><strong>{t("distributionPage.objectiveTitle")}</strong> {t("distributionPage.objectiveText")}</p>
               </div>
             </FadeInUp>
 

@@ -30,6 +30,7 @@
     "titleLine2": "",
     "titleHighlight": "Quality. Trust. A Healthy Future.",
     "description": "Ankhnii Nakhia LLC was established in 2007 in pharmaceutical importing, supply, sales, agriculture, and foreign trade. Today we operate a Pharmaceutical Distribution Center, 6 branch pharmacies, and Az Children's Hospital with over 40 employees, serving continuously for 19 years.",
+    "experience": "19+ years of experience",
     "orderButton": "Place Order",
     "contactButton": "Contact Us"
   },
@@ -146,7 +147,8 @@
       "title": "Message sent successfully!",
       "description": "We will contact you shortly.",
       "resendButton": "Send Again"
-    }
+    },
+    "mapTitle": "Ankhnii Nakhia LLC Location"
   },
   "about": {
     "aboutUs": "About Us",
@@ -261,7 +263,29 @@
       "title": "Quality Standards",
       "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements."
     },
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "pharmacyPage": {
+      "heading": "Pharmacy",
+      "p1": "Starting from 2007, our pharmacy has expanded to 6 branches with over 20 staff, providing Health Insurance discounted services to family clinics and citizens, contributing to public health protection.",
+      "p2": "We follow the MNS5260:2015 pharmacy structure and operations standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements, promoting rational medicine use among citizens.",
+      "goalTitle": "Our pharmacy's mission:",
+      "goalText": "To provide safe, quality-assured medicines and medical supplies to healthcare organizations and the public continuously and equitably, delivering pharmaceutical care services."
+    },
+    "distributionPage": {
+      "heading": "\"Ankhnii Nakhia\" Pharmaceutical Distribution Center",
+      "p1": "Since April 7, 2017, Ankhnii Nakhia LLC has been operating under a special license to supply medicines, medical instruments, equipment, and accessories in Khan-Uul District with 10 employees.",
+      "p2": "Today, we import and sell over 10 types of medicines registered in Mongolia's pharmaceutical registry from reputable manufacturers in Russia and Vietnam.",
+      "goalTitle": "Our goal:",
+      "goalText": "To conduct pharmaceutical supply activities at the highest quality level while fully implementing all laws and regulations.",
+      "objectiveTitle": "Our objective:",
+      "objectiveText": "Going forward, we aim to supply quality medicines, medical instruments, equipment, and accessories from highly developed countries such as Austria, Germany, Poland, the USA, Australia, and South Korea to our citizens."
+    },
+    "childrenHospitalPage": {
+      "heading": "\"Az\" Children's Hospital",
+      "p1": "\"Az\" Children's Hospital has been operating since 2017, working continuously to make a tangible contribution to protecting children's health. The hospital focuses on providing quality, safe, and accessible services that meet various children's healthcare needs, employing highly skilled medical professionals and introducing modern equipment and new technologies.",
+      "p2": "The hospital not only provides medical treatment but also organizes various initiatives aimed at providing preventive knowledge, advice, and information to children and parents, and promoting healthy lifestyle habits.",
+      "p3": "Thus, \"Az\" Children's Hospital makes a valuable contribution to society in protecting children's health and supporting their development."
+    }
   },
   "products": {
     "title": "Branch Network",

@@ -16,7 +16,7 @@ export default async function CeoMessagePage() {
           <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-14 sm:py-20">
             <FadeInUp>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#243342] mb-10 text-center font-roboto">
-                Захирлын мэндчилгээ
+                {t("ceoMessage.title")}
               </h2>
             </FadeInUp>
             <FadeInUp delay={0.2}>

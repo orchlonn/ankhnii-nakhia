@@ -16,30 +16,15 @@ export default async function PharmacyPage() {
           <div className="max-w-[1088px] mx-auto px-4 sm:px-6 py-14 sm:py-20">
             <FadeInUp>
               <h2 className="text-xl sm:text-2xl md:text-[28px] font-semibold text-[#1a1a2e] mb-14 text-center font-roboto">
-                Эмийн сан
+                {t("pharmacyPage.heading")}
               </h2>
             </FadeInUp>
             <FadeInUp delay={0.2}>
               <div className="space-y-5 text-base sm:text-lg text-[#455A6F] leading-relaxed text-justify">
+                <p>{t("pharmacyPage.p1")}</p>
+                <p>{t("pharmacyPage.p2")}</p>
                 <p>
-                  Анх 2007 оноос эхлэсэн эмийн сан маань өдгөө нийт 6 салбар
-                  эмийн сан 20 гаруй хүний бүрэлдэхүүнтэй өргөжин тэлж Эрүүл
-                  Мэндийн Даатгалын хөнгөлттэй үнээр үйлчлэх, өрхийн эмнэлэг
-                  болон ард иргэдэд үйлчилж, ард түмний эрүүлийг хамгаалах
-                  үйлсэд жинтэй хувь нэмэр оруулахын төлөө зорин ажилласаар
-                  байна.
-                </p>
-                <p>
-                  Бид эмийн сангийн бүтэц үйл ажиллагааны MNS5260:2015
-                  стандартыг баримтлан, Монгол улсын эмийн бүртгэлд бүртгэгдсэн,
-                  чанарын аюулгүй байдлыг хангасан эмээр үйлчилэн иргэдэд эмийн
-                  зохистой хэрэглээг хэвшүүлэхийг зорин ажиллаж байна.
-                </p>
-                <p>
-                  <strong>Манай эмийн сангийн зорилго:</strong> Аюулгүй, чанарын
-                  баталгаатай эм, эмнэлэгийн хэрэгслээр эмнэлэгийн байгууллага,
-                  хүн амыг тасралтгүй, жигд хүртээмжтэй хангаж эм зүйн тусламж
-                  үйлчилгээ үзүүлэх явдал юм.
+                  <strong>{t("pharmacyPage.goalTitle")}</strong> {t("pharmacyPage.goalText")}
                 </p>
               </div>
             </FadeInUp>

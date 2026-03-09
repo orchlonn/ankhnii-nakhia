@@ -231,7 +231,7 @@ export default function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Анхны Нахиа ХХК байршил"
+              title={t("mapTitle")}
             />
           </div>
         </FadeInUp>

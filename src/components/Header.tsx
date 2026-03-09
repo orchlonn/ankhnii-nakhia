@@ -112,7 +112,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <Image src="/Company Logo.png" alt="Анхны Нахиа" width={200} height={200} className="group-hover:scale-105 transition-transform" />
+            <Image src="/Company Logo.png" alt={t("companyName")} width={200} height={200} className="group-hover:scale-105 transition-transform" />
           </Link>
 
           {/* Desktop Nav */}

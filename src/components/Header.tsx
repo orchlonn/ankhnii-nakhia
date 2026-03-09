@@ -157,16 +157,16 @@ export default function Header() {
 
         {/* Mobile Nav */}
         {mobileOpen && (
-          <nav className="lg:hidden pb-6 pt-2 border-t border-gray-100 animate-fade-in max-h-[calc(100vh-72px)] overflow-y-auto">
+          <nav className={`lg:hidden pb-6 pt-2 border-t animate-fade-in max-h-[calc(100vh-72px)] overflow-y-auto ${scrolled ? "border-gray-100" : "border-white/20"}`}>
             <div className="flex flex-col gap-1">
               {/* About Us with dropdown */}
               <div>
                 <button
                   onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-                  className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-lg transition-all ${
+                  className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-all ${
                     pathname === "/about"
                       ? "text-[#00AC94] bg-[#00AC94]/5"
-                      : "text-[#5a5a72] hover:text-[#1a1a2e]"
+                      : scrolled ? "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50" : "text-white hover:text-white/80"
                   }`}
                 >
                   {t("nav.about")}
@@ -179,7 +179,9 @@ export default function Header() {
                         key={sub.href}
                         href={sub.href as any}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-4 py-2.5 text-sm text-[#5a5a72] hover:text-[#00AC94] hover:bg-gray-50 rounded-lg transition-all"
+                        className={`block px-4 py-2.5 text-sm rounded-lg transition-all ${
+                          scrolled ? "text-[#5a5a72] hover:text-[#00AC94] hover:bg-gray-50" : "text-white/80 hover:text-white"
+                        }`}
                       >
                         {sub.label}
                       </Link>
@@ -192,10 +194,10 @@ export default function Header() {
               <div>
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-lg transition-all ${
+                  className={`w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-all ${
                     pathname === "/services"
                       ? "text-[#00AC94] bg-[#00AC94]/5"
-                      : "text-[#5a5a72] hover:text-[#1a1a2e]"
+                      : scrolled ? "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50" : "text-white hover:text-white/80"
                   }`}
                 >
                   {t("nav.services")}
@@ -208,7 +210,9 @@ export default function Header() {
                         key={sub.href}
                         href={sub.href as any}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-4 py-2.5 text-sm text-[#5a5a72] hover:text-[#00AC94] hover:bg-gray-50 rounded-lg transition-all"
+                        className={`block px-4 py-2.5 text-sm rounded-lg transition-all ${
+                          scrolled ? "text-[#5a5a72] hover:text-[#00AC94] hover:bg-gray-50" : "text-white/80 hover:text-white"
+                        }`}
                       >
                         {sub.label}
                       </Link>
@@ -221,17 +225,17 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className={`px-4 py-3 text-sm font-medium hover:bg-gray-50 rounded-lg transition-all ${
+                className={`px-4 py-3 text-sm font-medium rounded-lg transition-all ${
                   pathname === "/contact"
                     ? "text-[#00AC94] bg-[#00AC94]/5"
-                    : "text-[#5a5a72] hover:text-[#1a1a2e]"
+                    : scrolled ? "text-[#5a5a72] hover:text-[#1a1a2e] hover:bg-gray-50" : "text-white hover:text-white/80"
                 }`}
               >
                 {t("contactButton")}
               </Link>
 
               <div className="mx-4 mt-3">
-                <LanguageSwitcher />
+                <LanguageSwitcher scrolled={scrolled} />
               </div>
             </div>
           </nav>

@@ -4,25 +4,15 @@ import { FadeInUp, StaggerContainer, StaggerItem } from "./motion";
 
 const partners = [
   { name: "Truong Tho", logo: "/About Us/Partners/logo-1.png" },
-  { name: "Shin Poong", logo: "/About Us/Partners/logo-2.png" },
-  { name: "NizhPharm", logo: "/About Us/Partners/logo-3.jpg" },
+  { name: "Нижфарм", logo: "/About Us/Partners/logo-14.jpeg" },
   { name: "DK Pharma", logo: "/About Us/Partners/logo-4.png" },
   { name: "Dai Tin", logo: "/About Us/Partners/logo-5.png" },
   { name: "Hadiphar", logo: "/About Us/Partners/logo-6.jpg" },
   { name: "Eloge", logo: "/About Us/Partners/logo-7.jpg" },
-  { name: "Takaraj", logo: "/About Us/Partners/logo-8.jpeg" },
+  { name: "Healthline", logo: "/About Us/Partners/logo-13.png" },
   { name: "Alpha Pharma", logo: "/About Us/Partners/logo-9.png" },
   { name: "Beatexpharm", logo: "/About Us/Partners/logo-10.jpeg" },
-  { name: "Vacopharm", logo: "/About Us/Partners/logo-11.jpeg" },
-  { name: "Diamond France", logo: "/About Us/Partners/logo-12.png" },
-  { name: "Нижфарм", logo: "/About Us/Partners/logo-13.jpg" },
-  { name: "Best-pharm", logo: "/About Us/Partners/logo-14.jpeg" },
-  { name: "Delta Medical", logo: "/About Us/Partners/logo-15.jpg" },
-  { name: "Hanlim Pharm", logo: "/About Us/Partners/logo-16.png" },
-  { name: "Arterium", logo: "/About Us/Partners/logo-17.jpg" },
-  { name: "Feixia Medical", logo: "/About Us/Partners/logo-18.jpg" },
-  { name: "Partner 19", logo: "/About Us/Partners/logo-19.png" },
-  { name: "Partner 20", logo: "/About Us/Partners/logo-20.png" },
+  { name: "Vacopharm", logo: "/About Us/Partners/logo-12.png" },
 ];
 
 function PartnerCard({ partner }: { partner: { name: string; logo: string } }) {
@@ -43,7 +33,11 @@ function PartnerCard({ partner }: { partner: { name: string; logo: string } }) {
   );
 }
 
-export default async function Partners({ variant = "grid" }: { variant?: "grid" | "scroll" }) {
+export default async function Partners({
+  variant = "grid",
+}: {
+  variant?: "grid" | "scroll";
+}) {
   const t = await getTranslations("partners");
 
   return (
@@ -64,9 +58,15 @@ export default async function Partners({ variant = "grid" }: { variant?: "grid" 
       {variant === "scroll" ? (
         <FadeInUp delay={0.2}>
           <div className="relative">
-            <div className="flex gap-5 animate-scroll-left" style={{ width: "max-content" }}>
+            <div
+              className="flex gap-5 animate-scroll-left"
+              style={{ width: "max-content" }}
+            >
               {[...partners, ...partners].map((partner, i) => (
-                <div key={`${partner.name}-${i}`} className="flex-shrink-0 w-[200px]">
+                <div
+                  key={`${partner.name}-${i}`}
+                  className="flex-shrink-0 w-[200px]"
+                >
                   <PartnerCard partner={partner} />
                 </div>
               ))}
@@ -75,7 +75,10 @@ export default async function Partners({ variant = "grid" }: { variant?: "grid" 
         </FadeInUp>
       ) : (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8 sm:gap-x-6 sm:gap-y-10" staggerDelay={0.05}>
+          <StaggerContainer
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8 sm:gap-x-6 sm:gap-y-10"
+            staggerDelay={0.05}
+          >
             {partners.map((partner) => (
               <StaggerItem key={partner.name}>
                 <PartnerCard partner={partner} />

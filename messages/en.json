@@ -91,7 +91,7 @@
     "contactTitle": "Contact",
     "address": "Khan-Uul District, 3rd khoroo, Gerelt Urguu Complex 47a-2",
     "phone": "+976 98009898",
-    "phone2": "+976 80010366",
+    "phone2": "+976 99822129",
     "email": "anhnii.nahia@gmail.com",
     "copyright": "© 2007–2026 Ankhnii Nakhia LLC. All rights reserved."
   },
@@ -108,7 +108,7 @@
     },
     "phone2": {
       "label": "Phone 2",
-      "value": "+976 80010366"
+      "value": "+976 99822129"
     },
     "email": {
       "label": "Email",
@@ -198,14 +198,26 @@
       "title": "Company Introduction",
       "p1": "Ankhnii Nakhia LLC was first established in 2007 in the pharmacy sector. From April 7, 2017, we obtained a special license for supplying medicines, medical instruments, equipment, and accessories, successfully expanding our operations across Mongolia with quality-assured, safe medicines and medical supplies.",
       "p2": "Today, the company operates a pharmaceutical distribution center, 6 branch pharmacies, and a children's hospital, with over 40 employees, successfully operating for 19 years.",
-      "p3": "The company's founder and CEO, Kh. Sarnai, is a qualified pharmacist with over 20 years of professional experience. Under her leadership, the team consistently upholds quality and reliability through their highly skilled and experienced professionals.",
+      "p3": "The company's founder and CEO, Kh. Sarnai, is a qualified pharmacist with over 30 years of professional experience. Under her leadership, the team consistently upholds quality and reliability through their highly skilled and experienced professionals.",
       "p4": "Going forward, Ankhnii Nakhia LLC aims to introduce world-class pharmaceutical best practices, new technologies, and innovations across all its branches, delivering quality and accessible medicines and medical services to the public."
     },
     "highlights": {
-      "standard": { "title": "MNS5260:2015 Standard", "desc": "Operating in compliance with the pharmacy structure and operations standard." },
-      "sixBranches": { "title": "6 Branch Pharmacies", "desc": "Including Azyn Nakhia-1, Azyn Nakhia-2, Shine Nakhia, and Az Children's Hospital branches." },
-      "team": { "title": "Professional Team", "desc": "Over 30 professionals and staff including pharmacists and dispensers." },
-      "insurance": { "title": "Insurance Discount", "desc": "Serving citizens at Health Insurance discounted prices." }
+      "standard": {
+        "title": "MNS5260:2015 Standard",
+        "desc": "Operating in compliance with the pharmacy structure and operations standard."
+      },
+      "sixBranches": {
+        "title": "6 Branch Pharmacies",
+        "desc": "Including Azyn Nakhia-1, Azyn Nakhia-2, Shine Nakhia, and Az Children's Hospital branches."
+      },
+      "team": {
+        "title": "Professional Team",
+        "desc": "Over 30 professionals and staff including pharmacists and dispensers."
+      },
+      "insurance": {
+        "title": "Insurance Discount",
+        "desc": "Serving citizens at Health Insurance discounted prices."
+      }
     },
     "timeline": {
       "badge": "Achievements",
@@ -221,10 +233,22 @@
       "badge": "Values",
       "title": "Our Values",
       "subtitle": "We uphold the following values as the core principles of our operations.",
-      "quality": { "title": "Quality", "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements." },
-      "reliability": { "title": "Reliability", "desc": "Operating continuously for over 25 years since 2000, serving citizens through 6 branch pharmacies." },
-      "responsibility": { "title": "Responsibility", "desc": "Fully implementing laws and regulations in our operations, working responsibly." },
-      "accessibility": { "title": "Accessibility", "desc": "Serving at Health Insurance discounted prices and promoting rational medicine use." }
+      "quality": {
+        "title": "Quality",
+        "desc": "Following the MNS5260:2015 standard, serving with medicines registered in Mongolia's pharmaceutical registry that meet safety and quality requirements."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "desc": "Operating continuously for over 25 years since 2000, serving citizens through 6 branch pharmacies."
+      },
+      "responsibility": {
+        "title": "Responsibility",
+        "desc": "Fully implementing laws and regulations in our operations, working responsibly."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "desc": "Serving at Health Insurance discounted prices and promoting rational medicine use."
+      }
     },
     "cta": {
       "title": "Partner with Us",
@@ -278,7 +302,7 @@
       "goalTitle": "Our goal:",
       "goalText": "To conduct pharmaceutical supply activities at the highest quality level while fully implementing all laws and regulations.",
       "objectiveTitle": "Our objective:",
-      "objectiveText": "Going forward, we aim to supply quality medicines, medical instruments, equipment, and accessories from highly developed countries such as Austria, Germany, Poland, the USA, Australia, and South Korea to our citizens."
+      "objectiveText": "Going forward, we aim to supply quality medicines, medical instruments, equipment, and accessories from highly developed countries such as Austria, Germany, Poland, the USA, Australia, Japan, and South Korea to our citizens."
     },
     "childrenHospitalPage": {
       "heading": "\"Az\" Children's Hospital",
@@ -290,12 +314,21 @@
   "products": {
     "title": "Branch Network",
     "subtitle": "Serving citizens through 6 branch pharmacies and a pharmaceutical supply unit",
-    "ankhnyNakhia": { "name": "Ankhnii Nakhia Pharmacy", "desc": "Main pharmacy, operating since 2009" },
+    "ankhnyNakhia": {
+      "name": "Ankhnii Nakhia Pharmacy",
+      "desc": "Main pharmacy, operating since 2009"
+    },
     "azynNakhia1": { "name": "Azyn Nakhia-1", "desc": "Branch unit" },
     "azynNakhia2": { "name": "Azyn Nakhia-2", "desc": "Branch unit" },
     "shineNakhia": { "name": "Shine Nakhia", "desc": "Branch unit" },
-    "azKids": { "name": "Az Children's Hospital", "desc": "Children's hospital branch" },
-    "supply": { "name": "Pharmaceutical Supply Unit", "desc": "Khan-Uul district, operating since 2017" }
+    "azKids": {
+      "name": "Az Children's Hospital",
+      "desc": "Children's hospital branch"
+    },
+    "supply": {
+      "name": "Pharmaceutical Supply Unit",
+      "desc": "Khan-Uul district, operating since 2017"
+    }
   },
   "hr": {
     "badge": "Careers",
@@ -307,11 +340,26 @@
       "badge": "Policy",
       "title": "HR Policy",
       "subtitle": "We develop our employees and create a favorable environment to maximize their capabilities.",
-      "rightFit": { "title": "Right Job Placement", "desc": "Placing each employee in a position that matches their skills, interests, and talents." },
-      "fairEvaluation": { "title": "Fair Evaluation", "desc": "Clearly distributing responsibilities and implementing an objective, fair evaluation system." },
-      "resultBasedReward": { "title": "Results-Based Incentives", "desc": "Genuinely valuing the worth of labor and creating conditions for long-term, stable work." },
-      "continuousGrowth": { "title": "Continuous Development", "desc": "Implementing training programs to systematically improve professional and general skills." },
-      "teamCulture": { "title": "Positive Team Culture", "desc": "Creating an organizational culture that values respect, understanding, and creativity." }
+      "rightFit": {
+        "title": "Right Job Placement",
+        "desc": "Placing each employee in a position that matches their skills, interests, and talents."
+      },
+      "fairEvaluation": {
+        "title": "Fair Evaluation",
+        "desc": "Clearly distributing responsibilities and implementing an objective, fair evaluation system."
+      },
+      "resultBasedReward": {
+        "title": "Results-Based Incentives",
+        "desc": "Genuinely valuing the worth of labor and creating conditions for long-term, stable work."
+      },
+      "continuousGrowth": {
+        "title": "Continuous Development",
+        "desc": "Implementing training programs to systematically improve professional and general skills."
+      },
+      "teamCulture": {
+        "title": "Positive Team Culture",
+        "desc": "Creating an organizational culture that values respect, understanding, and creativity."
+      }
     },
     "whyUs": {
       "badge": "Advantages",
@@ -328,12 +376,30 @@
       "badge": "Stages",
       "title": "Recruitment Process",
       "subtitle": "Our hiring process is based on transparent and fair principles.",
-      "jobPosting": { "title": "Job Posting", "desc": "Publishing job vacancy announcements seeking qualified professionals." },
-      "applicationReceive": { "title": "Application Receipt", "desc": "Receiving candidate applications confidentially." },
-      "screening": { "title": "Application Screening", "desc": "Checking whether candidates meet the set requirements." },
-      "initialInterview": { "title": "Initial Interview", "desc": "Conducting interviews to assess skills and fit." },
-      "followUpInterview": { "title": "Follow-up Interview", "desc": "Meeting with management for detailed position assessment." },
-      "hiring": { "title": "Hiring", "desc": "Signing the contract and starting the team onboarding process." }
+      "jobPosting": {
+        "title": "Job Posting",
+        "desc": "Publishing job vacancy announcements seeking qualified professionals."
+      },
+      "applicationReceive": {
+        "title": "Application Receipt",
+        "desc": "Receiving candidate applications confidentially."
+      },
+      "screening": {
+        "title": "Application Screening",
+        "desc": "Checking whether candidates meet the set requirements."
+      },
+      "initialInterview": {
+        "title": "Initial Interview",
+        "desc": "Conducting interviews to assess skills and fit."
+      },
+      "followUpInterview": {
+        "title": "Follow-up Interview",
+        "desc": "Meeting with management for detailed position assessment."
+      },
+      "hiring": {
+        "title": "Hiring",
+        "desc": "Signing the contract and starting the team onboarding process."
+      }
     },
     "cta": {
       "title": "Ready to join us?",

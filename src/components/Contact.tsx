@@ -3,7 +3,13 @@
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import { FadeInUp, FadeInLeft, FadeInRight, StaggerContainer, StaggerItem } from "./motion";
+import {
+  FadeInUp,
+  FadeInLeft,
+  FadeInRight,
+  StaggerContainer,
+  StaggerItem,
+} from "./motion";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -22,7 +28,7 @@ export default function Contact() {
       value: t("phone.value"),
       value2: t("phone2.value"),
       href: "tel:+97670111234",
-      href2: "tel:+97680010366",
+      href2: "tel:+97699822129",
     },
     {
       icon: Mail,
@@ -62,7 +68,10 @@ export default function Contact() {
         <div className="grid lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Contact Info */}
           <FadeInLeft className="lg:col-span-2">
-            <StaggerContainer className="space-y-3 sm:space-y-4" staggerDelay={0.1}>
+            <StaggerContainer
+              className="space-y-3 sm:space-y-4"
+              staggerDelay={0.1}
+            >
               {contactInfo.map((item) => (
                 <StaggerItem key={item.label}>
                   <div className="flex items-start gap-3.5 p-4 rounded-xl bg-[#F9FAFB] border border-gray-100 hover:border-[#00AC94]/30 hover:shadow-md transition-all duration-300">
@@ -74,14 +83,22 @@ export default function Contact() {
                         {item.label}
                       </p>
                       {item.href ? (
-                        <a href={item.href} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
+                        <a
+                          href={item.href}
+                          className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block"
+                        >
                           {item.value}
                         </a>
                       ) : (
-                        <p className="text-sm text-[#243342] font-medium">{item.value}</p>
+                        <p className="text-sm text-[#243342] font-medium">
+                          {item.value}
+                        </p>
                       )}
                       {"value2" in item && item.value2 && (
-                        <a href={(item as { href2?: string }).href2} className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block">
+                        <a
+                          href={(item as { href2?: string }).href2}
+                          className="text-sm text-[#243342] font-medium hover:text-[#00AC94] transition-colors block"
+                        >
                           {item.value2}
                         </a>
                       )}
@@ -97,18 +114,29 @@ export default function Contact() {
                     <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 border border-gray-100">
                       <Clock className="w-4.5 h-4.5 text-[#00AC94]" />
                     </div>
-                    <p className="text-sm font-semibold text-[#243342]">{t("hours.label")}</p>
+                    <p className="text-sm font-semibold text-[#243342]">
+                      {t("hours.label")}
+                    </p>
                   </div>
                   <div className="space-y-0.5">
                     {workHours.slice(0, 5).map((item) => (
-                      <div key={item.day} className="flex items-center justify-between text-sm leading-tight">
-                        <span className="text-[#243342] font-medium">{item.day}</span>
+                      <div
+                        key={item.day}
+                        className="flex items-center justify-between text-sm leading-tight"
+                      >
+                        <span className="text-[#243342] font-medium">
+                          {item.day}
+                        </span>
                         <span className="text-[#455A6F]">{item.time}</span>
                       </div>
                     ))}
                     <div className="flex items-center justify-between text-sm leading-tight">
-                      <span className="text-[#243342] font-medium">{t("hours.saturday")}, {t("hours.sunday")}</span>
-                      <span className="text-[#455A6F]">{t("hours.closed")}</span>
+                      <span className="text-[#243342] font-medium">
+                        {t("hours.saturday")}, {t("hours.sunday")}
+                      </span>
+                      <span className="text-[#455A6F]">
+                        {t("hours.closed")}
+                      </span>
                     </div>
                   </div>
                 </div>

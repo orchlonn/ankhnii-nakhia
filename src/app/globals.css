@@ -171,3 +171,89 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Page transition */
+.page-hidden {
+  opacity: 0;
+}
+
+.page-revealed {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Hero reveal animations */
+.hero-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.hero-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.hero-word.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scroll reveal */
+.scroll-reveal {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.scroll-reveal.fade-in {
+  opacity: 0;
+}
+
+.scroll-reveal.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.scroll-reveal.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.scroll-reveal.scale-up {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+}
+
+.scroll-reveal.scroll-revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-hidden,
+  .page-revealed,
+  .hero-reveal,
+  .hero-reveal.revealed,
+  .hero-word,
+  .hero-word.revealed,
+  .scroll-reveal,
+  .scroll-reveal.scroll-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

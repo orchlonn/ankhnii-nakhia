@@ -42,7 +42,8 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         phase >= 4 ? "-translate-y-full" : "translate-y-0"
       }`}
       style={{
-        background: "linear-gradient(135deg, #1a1a2e 0%, #0d3330 50%, #1a1a2e 100%)",
+        background:
+          "linear-gradient(135deg, #1a1a2e 0%, #0d3330 50%, #1a1a2e 100%)",
       }}
     >
       {/* Ambient glow */}
@@ -57,9 +58,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       {/* Logo */}
       <div
         className={`relative w-24 h-24 sm:w-28 sm:h-28 mb-6 transition-all duration-700 ease-out ${
-          phase >= 1
-            ? "opacity-100 scale-100"
-            : "opacity-0 scale-75"
+          phase >= 1 ? "opacity-100 scale-100" : "opacity-0 scale-75"
         }`}
       >
         <Image
@@ -74,12 +73,10 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       {/* App name */}
       <h1
         className={`text-2xl sm:text-3xl font-bold text-white font-playfair tracking-wide mb-8 transition-all duration-600 ease-out ${
-          phase >= 2
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4"
+          phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        Анхний Нахиа
+        Анхны Нахиа
       </h1>
 
       {/* Loading bar */}

@@ -7,7 +7,10 @@ export default async function Hero() {
   const t = await getTranslations("hero");
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       {/* Background image */}
       <Image
         src="/Home/Starting photo.png"

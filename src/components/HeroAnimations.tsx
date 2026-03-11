@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 interface HeroAnimationsProps {
@@ -11,7 +11,7 @@ interface HeroAnimationsProps {
 
 export default function HeroAnimations({ title, subtitle, buttonText }: HeroAnimationsProps) {
   const [revealed, setRevealed] = useState(false);
-  const words = title.split(" ");
+  const words = title.trim().split(/\s+/);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -29,14 +29,15 @@ export default function HeroAnimations({ title, subtitle, buttonText }: HeroAnim
       {/* Title - word by word */}
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight sm:whitespace-nowrap font-playfair">
         {words.map((word, i) => (
-          <span
-            key={i}
-            className={`hero-word ${revealed ? "revealed" : ""}`}
-            style={{ transitionDelay: `${200 + i * 80}ms` }}
-          >
-            {word}
-            {i < words.length - 1 ? " " : ""}
-          </span>
+          <Fragment key={i}>
+            <span
+              className={`hero-word ${revealed ? "revealed" : ""}`}
+              style={{ transitionDelay: `${200 + i * 80}ms` }}
+            >
+              {word}
+            </span>
+            {i < words.length - 1 ? " " : null}
+          </Fragment>
         ))}
       </h1>
 
